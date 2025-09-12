@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowDown, Download, Sparkles, Code, Palette, Globe, Star, Zap, Play, Coffee, Lightbulb } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { ArrowDown, Download, Sparkles, Code, Palette, Globe, Star, Zap, Play, Coffee, Lightbulb, Heart, Rocket, Target, Users, Award, TrendingUp } from 'lucide-react';
+import { useEffect, useState, useCallback } from 'react';
 import shreyasProfile from '@/assets/shreyas-profile.jpg';
 
 const HeroSection = () => {
@@ -9,21 +9,36 @@ const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentTime, setCurrentTime] = useState('');
   const [typedText, setTypedText] = useState('');
-  const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, delay: number}>>([]);
+  const [particles, setParticles] = useState<Array<{id: number, x: number, y: number, delay: number, size: number}>>([]);
+  const [floatingElements, setFloatingElements] = useState<Array<{id: number, x: number, y: number, rotation: number, scale: number}>>([]);
+  const [scrollY, setScrollY] = useState(0);
 
   const typewriterText = "Creating digital magic, one pixel at a time ✨";
+  const rotatingTexts = ["Innovative", "Creative", "Modern", "Responsive"];
+  const [currentRotatingIndex, setCurrentRotatingIndex] = useState(0);
 
   useEffect(() => {
     setIsVisible(true);
     
-    // Generate particles
-    const newParticles = Array.from({ length: 20 }, (_, i) => ({
+    // Generate enhanced particles
+    const newParticles = Array.from({ length: 30 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      delay: Math.random() * 3
+      delay: Math.random() * 3,
+      size: Math.random() * 3 + 1
     }));
     setParticles(newParticles);
+
+    // Generate floating elements
+    const newFloatingElements = Array.from({ length: 8 }, (_, i) => ({
+      id: i,
+      x: Math.random() * 100,
+      y: Math.random() * 100,
+      rotation: Math.random() * 360,
+      scale: Math.random() * 0.5 + 0.5
+    }));
+    setFloatingElements(newFloatingElements);
 
     // Update time
     const updateTime = () => {
@@ -36,6 +51,11 @@ const HeroSection = () => {
     };
     updateTime();
     const timeInterval = setInterval(updateTime, 1000);
+
+    // Rotating text effect
+    const rotatingInterval = setInterval(() => {
+      setCurrentRotatingIndex((prev) => (prev + 1) % rotatingTexts.length);
+    }, 3000);
 
     // Typewriter effect
     let currentIndex = 0;
@@ -55,11 +75,18 @@ const HeroSection = () => {
       });
     };
 
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('scroll', handleScroll);
       clearInterval(timeInterval);
       clearInterval(typeInterval);
+      clearInterval(rotatingInterval);
     };
   }, []);
 
@@ -91,19 +118,38 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-white/5"></div>
       <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-primary/5 to-secondary/10"></div>
       
-      {/* Animated Particles */}
+      {/* Enhanced Animated Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {particles.map((particle) => (
           <div
             key={particle.id}
-            className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
+            className="absolute rounded-full bg-white/40 animate-pulse blur-[0.5px]"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
+              width: `${particle.size}px`,
+              height: `${particle.size}px`,
               animationDelay: `${particle.delay}s`,
-              animationDuration: `${2 + Math.random() * 3}s`
+              animationDuration: `${2 + Math.random() * 3}s`,
+              transform: `translate(${mousePosition.x * particle.size * 0.1}px, ${mousePosition.y * particle.size * 0.1}px)`,
             }}
           />
+        ))}
+        
+        {/* Floating Elements */}
+        {floatingElements.map((element) => (
+          <div
+            key={element.id}
+            className="absolute w-8 h-8 opacity-20"
+            style={{
+              left: `${element.x}%`,
+              top: `${element.y}%`,
+              transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px) rotate(${element.rotation + scrollY * 0.1}deg) scale(${element.scale})`,
+              transition: 'transform 0.1s ease-out'
+            }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-white/30 to-white/10 rounded-lg backdrop-blur-sm animate-pulse"></div>
+          </div>
         ))}
       </div>
       
@@ -199,7 +245,19 @@ const HeroSection = () => {
                   <div className="absolute -inset-1 bg-white/10 blur-2xl rounded-full opacity-30 animate-pulse"></div>
                 </span>
                 <span className="block text-3xl md:text-5xl lg:text-6xl text-white/90 font-light mt-2">
-                  Web Developer &
+                  <span className="relative inline-block">
+                    <span className="opacity-0 absolute">{rotatingTexts[0]}</span>
+                    <span 
+                      className="transition-all duration-500 ease-in-out"
+                      key={currentRotatingIndex}
+                      style={{
+                        animation: 'fade-in 0.5s ease-in-out'
+                      }}
+                    >
+                      {rotatingTexts[currentRotatingIndex]}
+                    </span>
+                  </span>
+                  {' '}Web Developer &
                 </span>
                 <span className="block text-3xl md:text-5xl lg:text-6xl bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent font-light">
                   UI/UX Designer
