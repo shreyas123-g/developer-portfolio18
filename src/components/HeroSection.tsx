@@ -411,10 +411,18 @@ const HeroSection = () => {
                 </div>
                 
                 {/* Experience Badge */}
-                <div className="absolute -top-4 -right-8 bg-gradient-to-br from-primary to-primary-glow rounded-2xl p-4 border border-white/30 shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-default">
-                  <div className="text-center text-white">
-                    <div className="text-2xl font-bold">2+</div>
-                    <div className="text-xs font-medium opacity-90">Years<br/>Experience</div>
+                <div className="group absolute -top-4 -right-8 bg-white/20 backdrop-blur-xl rounded-3xl p-5 border border-white/40 shadow-2xl hover:shadow-[0_20px_60px_-10px_rgba(255,255,255,0.3)] hover:scale-110 hover:rotate-3 transition-all duration-500 cursor-default overflow-hidden">
+                  {/* Animated gradient background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/30 via-blue-500/30 to-purple-600/30 opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent group-hover:from-white/20 transition-all duration-500"></div>
+                  
+                  {/* Animated particles */}
+                  <div className="absolute top-1 right-1 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
+                  <div className="absolute bottom-2 left-2 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-300"></div>
+                  
+                  <div className="relative text-center text-white">
+                    <div className="text-3xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">2+</div>
+                    <div className="text-xs font-semibold tracking-wide opacity-90 group-hover:opacity-100 transition-opacity duration-300">Years<br/>Experience</div>
                   </div>
                 </div>
                 
