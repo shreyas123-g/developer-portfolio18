@@ -421,8 +421,8 @@ const HeroSection = () => {
                   <div className="absolute bottom-2 left-2 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-300"></div>
                   
                   <div className="relative text-center text-white">
-                    <div className="text-3xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">2+</div>
-                    <div className="text-xs font-semibold tracking-wide opacity-90 group-hover:opacity-100 transition-opacity duration-300">Years<br/>Experience</div>
+                    <div className="text-2xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">🌟</div>
+                    <div className="text-xs font-semibold tracking-wide opacity-90 group-hover:opacity-100 transition-opacity duration-300">Fresher<br/>Developer</div>
                   </div>
                 </div>
                 
