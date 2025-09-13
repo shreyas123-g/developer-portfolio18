@@ -2,9 +2,101 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Phone, Mail, MapPin, Linkedin, Github, Instagram, Send } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
+import { Phone, Mail, MapPin, Linkedin, Github, Instagram, Send, Loader2 } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
 
 const ContactSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.subject || !formData.message) {
+      toast({
+        title: "Missing Information",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Initialize EmailJS
+      emailjs.init("Q7HffJR7NHEG5Qnho");
+
+      const templateParams = {
+        from_first_name: formData.firstName,
+        from_last_name: formData.lastName,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: "Shreyas",
+      };
+
+      await emailjs.send(
+        "service_769btpq",
+        "template_ndtr6nn",
+        templateParams
+      );
+
+      toast({
+        title: "Message Sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const contactInfo = [
     {
       icon: Phone,
@@ -125,57 +217,82 @@ const ContactSection = () => {
                 Send a Message
               </h3>
               
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      First Name
+                      First Name *
                     </label>
                     <Input 
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleInputChange}
                       placeholder="Your first name" 
                       className="border-2 focus:border-primary transition-colors"
+                      disabled={isSubmitting}
+                      required
                     />
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-foreground mb-2">
-                      Last Name
+                      Last Name *
                     </label>
                     <Input 
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleInputChange}
                       placeholder="Your last name" 
                       className="border-2 focus:border-primary transition-colors"
+                      disabled={isSubmitting}
+                      required
                     />
                   </div>
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Email
+                    Email *
                   </label>
                   <Input 
+                    name="email"
                     type="email" 
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="your.email@example.com" 
                     className="border-2 focus:border-primary transition-colors"
+                    disabled={isSubmitting}
+                    required
                   />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Subject
+                    Subject *
                   </label>
                   <Input 
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleInputChange}
                     placeholder="What's this about?" 
                     className="border-2 focus:border-primary transition-colors"
+                    disabled={isSubmitting}
+                    required
                   />
                 </div>
                 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Message
+                    Message *
                   </label>
                   <Textarea 
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
                     placeholder="Tell me about your project..." 
                     rows={5}
                     className="border-2 focus:border-primary transition-colors resize-none"
+                    disabled={isSubmitting}
+                    required
                   />
                 </div>
                 
@@ -183,9 +300,19 @@ const ContactSection = () => {
                   type="submit" 
                   className="w-full bg-hero-gradient hover:shadow-glow-lg transition-all duration-300 font-semibold py-3"
                   size="lg"
+                  disabled={isSubmitting}
                 >
-                  <Send className="mr-2 h-5 w-5" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-5 w-5" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </CardContent>
