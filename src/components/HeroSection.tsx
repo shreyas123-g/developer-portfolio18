@@ -104,8 +104,8 @@ const HeroSection = () => {
   ];
 
   const achievements = [
-    { number: '2+', label: 'Years Exp.', icon: Star },
-    { number: '15+', label: 'Projects', icon: Zap },
+    { number: '🌟', label: 'Fresher', icon: Star },
+    { number: '10+', label: 'Projects', icon: Zap },
     { number: '100%', label: 'Satisfaction', icon: Sparkles },
   ];
 
