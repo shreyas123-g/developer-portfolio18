@@ -12,8 +12,8 @@ const PortfolioSection = () => {
       description: "A fully interactive Rock Paper Scissors game with dynamic UI updates, score tracking, and responsive design. Features smooth animations and localStorage for game persistence.",
       image: rockPaperScissors,
       technologies: ["HTML", "CSS", "JavaScript", "localStorage", "Responsive Design"],
-      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
-      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project13",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project13",
       featured: true,
     },
     {
@@ -21,8 +21,8 @@ const PortfolioSection = () => {
       description: "A static YouTube homepage clone featuring a fixed header, responsive sidebar, video grid layout, and modern UI elements. Showcases advanced CSS Grid and Flexbox techniques.",
       image: youtubeClone,
       technologies: ["HTML", "CSS", "JavaScript", "CSS Grid", "Responsive Design"],
-      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
-      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project13",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project13",
       featured: true,
     },
     {
@@ -30,8 +30,8 @@ const PortfolioSection = () => {
       description: "A modern business website with clean design, smooth animations, and optimized performance. Built with focus on user experience and conversion optimization.",
       image: null,
       technologies: ["HTML", "CSS", "JavaScript", "UI/UX Design"],
-      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
-      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project13",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project13",
       featured: false,
     },
     {
@@ -39,8 +39,8 @@ const PortfolioSection = () => {
       description: "A web application that allows users to share their current location with interactive maps and real-time updates.",
       image: null,
       technologies: ["JavaScript", "Geolocation API", "Maps Integration"],
-      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
-      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project13",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project13",
       featured: false,
     },
   ];
