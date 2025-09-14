@@ -109,7 +109,7 @@ const HeroSection = () => {
     { number: '100%', label: 'Satisfaction', icon: Sparkles },
   ];
 
-  const techStack = ['React', 'TypeScript', 'Next.js', 'Tailwind', 'Node.js', 'Figma'];
+  const techStack = ['Figma', 'UI/UX', 'Lightroom', 'JavaScript', 'Java', 'HTML', 'CSS'];
 
   return (
     <section id="home" className="min-h-screen relative overflow-hidden">
