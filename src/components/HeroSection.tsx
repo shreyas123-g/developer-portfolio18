@@ -363,13 +363,9 @@ const HeroSection = () => {
 
             {/* New Social Proof Section */}
             <div className={`mt-8 transition-all duration-1000 delay-1100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="flex items-center justify-center lg:justify-start gap-4 text-white/60 text-sm">
-                <span>Trusted by clients worldwide</span>
-                <div className="flex -space-x-2">
-                  {[1,2,3].map((i) => (
-                    <div key={i} className="w-6 h-6 bg-white/20 rounded-full border-2 border-white/30 animate-pulse" style={{ animationDelay: `${i * 0.2}s` }}></div>
-                  ))}
-                </div>
+              <div className="flex items-center justify-center lg:justify-start gap-3 text-white/80 text-sm">
+                <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                <span className="font-medium">Ready to work</span>
               </div>
             </div>
           </div>
