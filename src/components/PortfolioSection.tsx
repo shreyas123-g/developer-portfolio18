@@ -12,8 +12,8 @@ const PortfolioSection = () => {
       description: "A fully interactive Rock Paper Scissors game with dynamic UI updates, score tracking, and responsive design. Features smooth animations and localStorage for game persistence.",
       image: rockPaperScissors,
       technologies: ["HTML", "CSS", "JavaScript", "localStorage", "Responsive Design"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       featured: true,
     },
     {
@@ -21,8 +21,8 @@ const PortfolioSection = () => {
       description: "A static YouTube homepage clone featuring a fixed header, responsive sidebar, video grid layout, and modern UI elements. Showcases advanced CSS Grid and Flexbox techniques.",
       image: youtubeClone,
       technologies: ["HTML", "CSS", "JavaScript", "CSS Grid", "Responsive Design"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       featured: true,
     },
     {
@@ -80,6 +80,7 @@ const PortfolioSection = () => {
                       size="sm" 
                       variant="secondary"
                       className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+                      onClick={() => window.open(project.liveUrl, '_blank')}
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Live Demo
@@ -88,6 +89,7 @@ const PortfolioSection = () => {
                       size="sm" 
                       variant="outline"
                       className="border-white text-white hover:bg-white hover:text-primary transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+                      onClick={() => window.open(project.githubUrl, '_blank')}
                     >
                       <Github className="h-4 w-4 mr-2" />
                       Code
@@ -144,11 +146,21 @@ const PortfolioSection = () => {
                     </div>
                     
                     <div className="flex space-x-3">
-                      <Button size="sm" variant="ghost" className="p-0 h-auto text-primary hover:text-primary-glow">
+                      <Button 
+                        size="sm" 
+                        variant="ghost" 
+                        className="p-0 h-auto text-primary hover:text-primary-glow"
+                        onClick={() => window.open(project.liveUrl, '_blank')}
+                      >
                         <ExternalLink className="h-4 w-4 mr-1" />
                         Demo
                       </Button>
-                      <Button size="sm" variant="ghost" className="p-0 h-auto text-muted-foreground hover:text-foreground">
+                      <Button 
+                        size="sm" 
+                        variant="ghost" 
+                        className="p-0 h-auto text-muted-foreground hover:text-foreground"
+                        onClick={() => window.open(project.githubUrl, '_blank')}
+                      >
                         <Github className="h-4 w-4 mr-1" />
                         Code
                       </Button>
