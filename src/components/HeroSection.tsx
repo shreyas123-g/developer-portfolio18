@@ -271,13 +271,6 @@ const HeroSection = () => {
                 I am a passionate <span className="text-white font-medium">web developer</span> and <span className="text-white font-medium">UI/UX designer</span> dedicated to creating visually appealing, user-friendly, and responsive digital experiences. With strong skills in HTML, CSS, JavaScript, and modern frameworks, I focus on clean design, intuitive interfaces, and seamless functionality to deliver engaging and efficient solutions that enhance user satisfaction.
               </p>
               
-              {/* Typewriter Effect */}
-              <div className="h-8 mb-6">
-                <p className="text-lg text-white/70 font-light italic">
-                  {typedText}
-                  <span className="inline-block w-0.5 h-5 bg-white/70 ml-1 animate-pulse"></span>
-                </p>
-              </div>
               
               {/* Enhanced Skill Tags with Tech Stack */}
               <div className="mb-6">
