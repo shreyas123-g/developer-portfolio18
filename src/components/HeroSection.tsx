@@ -268,8 +268,7 @@ const HeroSection = () => {
             {/* Typewriter Effect Description */}
             <div className={`mb-10 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <p className="text-xl md:text-2xl text-white/80 mb-2 max-w-2xl leading-relaxed font-light">
-                Crafting <span className="text-white font-medium">pixel-perfect</span> digital experiences 
-                that blend stunning visuals with seamless functionality.
+                I am a passionate <span className="text-white font-medium">web developer</span> and <span className="text-white font-medium">UI/UX designer</span> dedicated to creating visually appealing, user-friendly, and responsive digital experiences. With strong skills in HTML, CSS, JavaScript, and modern frameworks, I focus on clean design, intuitive interfaces, and seamless functionality to deliver engaging and efficient solutions that enhance user satisfaction.
               </p>
               
               {/* Typewriter Effect */}
