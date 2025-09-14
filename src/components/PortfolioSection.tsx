@@ -30,8 +30,8 @@ const PortfolioSection = () => {
       description: "A modern business website with clean design, smooth animations, and optimized performance. Built with focus on user experience and conversion optimization.",
       image: null,
       technologies: ["HTML", "CSS", "JavaScript", "UI/UX Design"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       featured: false,
     },
     {
@@ -39,8 +39,8 @@ const PortfolioSection = () => {
       description: "A web application that allows users to share their current location with interactive maps and real-time updates.",
       image: null,
       technologies: ["JavaScript", "Geolocation API", "Maps Integration"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       featured: false,
     },
   ];
