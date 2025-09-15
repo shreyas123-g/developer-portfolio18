@@ -26,10 +26,10 @@ const SkillsSection = () => {
       color: "from-accent to-primary",
     },
     {
-      title: "Responsive Design",
+      title: "Other Skills",
       icon: Smartphone,
-      description: "Ensuring optimal experience across all devices",
-      skills: ["Mobile-First", "Cross-Browser", "Performance", "Accessibility", "SEO"],
+      description: "This are the other skills",
+      skills: ["Football", "Volleyball", "Communication", "GitHub", "Team Work"],
       color: "from-primary-glow to-secondary",
     },
   ];
