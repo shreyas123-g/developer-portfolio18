@@ -159,7 +159,7 @@ const PortfolioSection = () => {
                         size="sm" 
                         variant="ghost" 
                         className="p-0 h-auto text-primary hover:text-primary-glow"
-                        onClick={() => window.open(project.liveUrl, '_blank')}
+                        onClick={() => window.open("https://www.figma.com/proto/t2gHjya4Nli7qePuBnBRpc/SHREYAS-PROJECT-1-UI-UX?node-id=7-3&p=f&viewport=58%2C291%2C0.14&t=FrVuRd11uJROYlUA-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=7%3A3", '_blank')}
                       >
                         <ExternalLink className="h-4 w-4 mr-1" />
                         Demo
@@ -168,7 +168,7 @@ const PortfolioSection = () => {
                         size="sm" 
                         variant="ghost" 
                         className="p-0 h-auto text-muted-foreground hover:text-foreground"
-                        onClick={() => window.open(project.githubUrl, '_blank')}
+                        onClick={() => window.open("https://www.figma.com/proto/t2gHjya4Nli7qePuBnBRpc/SHREYAS-PROJECT-1-UI-UX?node-id=7-3&p=f&viewport=58%2C291%2C0.14&t=FrVuRd11uJROYlUA-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=7%3A3", '_blank')}
                       >
                         <Github className="h-4 w-4 mr-1" />
                         Code
