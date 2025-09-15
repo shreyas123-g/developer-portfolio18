@@ -159,7 +159,7 @@ const PortfolioSection = () => {
                         size="sm" 
                         variant="ghost" 
                         className="p-0 h-auto text-primary hover:text-primary-glow"
-                        onClick={() => window.open("https://www.figma.com/proto/t2gHjya4Nli7qePuBnBRpc/SHREYAS-PROJECT-1-UI-UX?node-id=7-3&p=f&viewport=58%2C291%2C0.14&t=FrVuRd11uJROYlUA-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=7%3A3", '_blank')}
+                        onClick={() => window.open("https://www.figma.com/proto/t2gHjya4Nli7qePuBnBRpc/SHREYAS-PROJECT-1-UI-UX?page-id=26%3A226&node-id=30-546&starting-point-node-id=30%3A546&t=TT69s7rzq7difduk-1", '_blank')}
                       >
                         <ExternalLink className="h-4 w-4 mr-1" />
                         Demo
@@ -168,7 +168,7 @@ const PortfolioSection = () => {
                         size="sm" 
                         variant="ghost" 
                         className="p-0 h-auto text-muted-foreground hover:text-foreground"
-                        onClick={() => window.open("https://www.figma.com/proto/t2gHjya4Nli7qePuBnBRpc/SHREYAS-PROJECT-1-UI-UX?node-id=7-3&p=f&viewport=58%2C291%2C0.14&t=FrVuRd11uJROYlUA-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=7%3A3", '_blank')}
+                        onClick={() => window.open("https://www.figma.com/proto/t2gHjya4Nli7qePuBnBRpc/SHREYAS-PROJECT-1-UI-UX?page-id=26%3A226&node-id=30-546&starting-point-node-id=30%3A546&t=TT69s7rzq7difduk-1", '_blank')}
                       >
                         <Github className="h-4 w-4 mr-1" />
                         Code
