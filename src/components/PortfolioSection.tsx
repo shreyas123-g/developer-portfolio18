@@ -43,6 +43,15 @@ const PortfolioSection = () => {
       githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       featured: false,
     },
+    {
+      title: "Amazon Webpage",
+      description: "A clone of Amazon's homepage featuring modern e-commerce design patterns, responsive layout, and interactive user interface elements.",
+      image: null,
+      technologies: ["HTML", "CSS", "JavaScript"],
+      liveUrl: "https://github.com/shreyas123-g/shreyas-project2",
+      githubUrl: "https://github.com/shreyas123-g/shreyas-project2",
+      featured: false,
+    },
   ];
 
   return (
