@@ -19,10 +19,10 @@ const SkillsSection = () => {
       color: "from-secondary to-accent",
     },
     {
-      title: "Modern Technologies",
+      title: "Editing Skills",
       icon: Layers,
-      description: "Working with current web development frameworks and tools",
-      skills: ["ES6+", "CSS Grid", "Flexbox", "Web APIs", "Version Control"],
+      description: "Designing the picture and other tools to edit",
+      skills: ["Lightroom", "Picsart", "Snapseed", "Photo Editing", "Color Correction"],
       color: "from-accent to-primary",
     },
     {
