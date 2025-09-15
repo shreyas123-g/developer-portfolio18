@@ -12,10 +12,10 @@ const SkillsSection = () => {
       color: "from-primary to-primary-glow",
     },
     {
-      title: "Frontend Development",
+      title: "Design & Development",
       icon: Code,
-      description: "Building responsive and interactive web applications",
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Responsive Design"],
+      description: "Creating and developing digital solutions across platforms",
+      skills: ["Figma", "Graphic Designer", "Web Development", "App Development", "Modifying Websites"],
       color: "from-secondary to-accent",
     },
     {
