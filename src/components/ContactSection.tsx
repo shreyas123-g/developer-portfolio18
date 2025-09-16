@@ -125,19 +125,19 @@ const ContactSection = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "#",
+      href: "https://www.linkedin.com/in/shreyas-0b8129333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
       color: "hover:text-blue-600",
     },
     {
       icon: Github,
       label: "GitHub", 
-      href: "#",
+      href: "https://github.com/shreyas123-g",
       color: "hover:text-gray-800",
     },
     {
       icon: Instagram,
       label: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/_shreyas.__7/?utm_source=qr&igsh=OXg0MjViaTNrMGE4#",
       color: "hover:text-pink-600",
     },
   ];
