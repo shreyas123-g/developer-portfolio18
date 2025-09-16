@@ -15,7 +15,7 @@ const SkillsSection = () => {
       title: "Design & Development",
       icon: Code,
       description: "Creating and developing digital solutions across platforms",
-      skills: ["Figma", "Graphic Designer", "Web Development", "App Development", "Modifying Websites"],
+      skills: ["Figma", "Modify or Updating the Website", "Graphic Designer", "Web Development", "App Development"],
       color: "from-secondary to-accent",
     },
     {
