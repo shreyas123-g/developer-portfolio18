@@ -8,7 +8,7 @@ const SkillsSection = () => {
       title: "UI/UX Design",
       icon: Palette,
       description: "Creating intuitive and visually appealing user interfaces",
-      skills: ["User Research", "Wireframing", "Prototyping", "Visual Design", "Design Systems"],
+      skills: ["Figma", "Graphic Designer", "App Development", "Web Development", "Designing System"],
       color: "from-primary to-primary-glow",
     },
     {
