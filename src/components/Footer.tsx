@@ -17,7 +17,7 @@ const Footer = () => {
     {
       icon: Instagram,
       label: "Instagram",
-      href: "#",
+      href: "https://www.instagram.com/_shreyas.__7/?utm_source=qr&igsh=OXg0MjViaTNrMGE4#",
     },
   ];
 
