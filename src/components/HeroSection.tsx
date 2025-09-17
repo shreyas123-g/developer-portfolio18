@@ -112,18 +112,18 @@ const HeroSection = () => {
   const techStack = ['Figma', 'UI/UX', 'Lightroom', 'JavaScript', 'Java', 'HTML', 'CSS'];
 
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden">
-      {/* Advanced Gradient Background with Multiple Layers */}
-      <div className="absolute inset-0 bg-hero-gradient"></div>
-      <div className="absolute inset-0 bg-gradient-to-tr from-white/5 via-transparent to-white/5"></div>
-      <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-primary/5 to-secondary/10"></div>
+    <section id="home" className="min-h-screen relative overflow-hidden bg-white">
+      {/* Light Gradient Background with Multiple Layers */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
+      <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-secondary/5"></div>
+      <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-accent/3 to-primary/3"></div>
       
       {/* Enhanced Animated Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {particles.map((particle) => (
           <div
             key={particle.id}
-            className="absolute rounded-full bg-white/40 animate-pulse blur-[0.5px]"
+            className="absolute rounded-full bg-primary/20 animate-pulse blur-[0.5px]"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
@@ -148,7 +148,7 @@ const HeroSection = () => {
               transition: 'transform 0.1s ease-out'
             }}
           >
-            <div className="w-full h-full bg-gradient-to-br from-white/30 to-white/10 rounded-lg backdrop-blur-sm animate-pulse"></div>
+            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/10 rounded-lg backdrop-blur-sm animate-pulse"></div>
           </div>
         ))}
       </div>
@@ -157,13 +157,13 @@ const HeroSection = () => {
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating Geometric Shapes with Enhanced Animation */}
         <div 
-          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-secondary/30 to-accent/20 rounded-3xl rotate-12 animate-pulse blur-sm hover:blur-none transition-all duration-500"
+          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-secondary/20 to-accent/10 rounded-3xl rotate-12 animate-pulse blur-sm hover:blur-none transition-all duration-500"
           style={{ 
             transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px) rotate(${12 + mousePosition.x * 0.1}deg)` 
           }}
         ></div>
         <div 
-          className="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-br from-primary-glow/40 to-primary/30 rounded-full animate-bounce shadow-lg shadow-primary/20"
+          className="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-br from-primary-glow/30 to-primary/20 rounded-full animate-bounce shadow-lg shadow-primary/10"
           style={{ 
             transform: `translate(${-mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`,
             animationDelay: '0.5s'
@@ -219,11 +219,11 @@ const HeroSection = () => {
             {/* Time & Location Badge */}
             <div className={`mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="flex items-center justify-center lg:justify-start gap-4 mb-4">
-                <Badge className="bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
+                <Badge className="bg-primary/10 backdrop-blur-sm text-foreground border-primary/20 hover:bg-primary/20 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
                   <Coffee className="w-3 h-3 mr-1.5" />
                   Ujire, India • {currentTime}
                 </Badge>
-                <Badge className="bg-white/10 backdrop-blur-sm text-white border-white/20 hover:bg-white/20 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
+                <Badge className="bg-secondary/10 backdrop-blur-sm text-foreground border-secondary/20 hover:bg-secondary/20 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
                   <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
                   Available for work
                 </Badge>
@@ -233,18 +233,18 @@ const HeroSection = () => {
             {/* Main Heading with Enhanced Typography */}
             <div className={`mb-8 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="mb-6">
-                <span className="text-white/90 text-lg md:text-xl font-medium flex items-center justify-center lg:justify-start gap-2">
+                <span className="text-foreground/80 text-lg md:text-xl font-medium flex items-center justify-center lg:justify-start gap-2">
                   <span className="animate-bounce">👋</span>
                   Hello, I'm
                 </span>
               </div>
               
-              <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-white mb-4 leading-[0.9] tracking-tight">
+              <h1 className="font-display font-bold text-5xl md:text-7xl lg:text-8xl text-foreground mb-4 leading-[0.9] tracking-tight">
                 <span className="relative inline-block">
                   Shreyas
-                  <div className="absolute -inset-1 bg-white/10 blur-2xl rounded-full opacity-30 animate-pulse"></div>
+                  <div className="absolute -inset-1 bg-primary/10 blur-2xl rounded-full opacity-30 animate-pulse"></div>
                 </span>
-                <span className="block text-3xl md:text-5xl lg:text-6xl text-white/90 font-light mt-2">
+                <span className="block text-3xl md:text-5xl lg:text-6xl text-foreground/80 font-light mt-2">
                   <span className="relative inline-block">
                     <span className="opacity-0 absolute">{rotatingTexts[0]}</span>
                     <span 
@@ -259,7 +259,7 @@ const HeroSection = () => {
                   </span>
                   {' '}Web Developer &
                 </span>
-                <span className="block text-3xl md:text-5xl lg:text-6xl bg-gradient-to-r from-white via-white/90 to-white/80 bg-clip-text text-transparent font-light">
+                <span className="block text-3xl md:text-5xl lg:text-6xl bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent font-light">
                   UI/UX Designer
                 </span>
               </h1>
@@ -267,8 +267,8 @@ const HeroSection = () => {
             
             {/* Typewriter Effect Description */}
             <div className={`mb-10 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <p className="text-xl md:text-2xl text-white/80 mb-2 max-w-2xl leading-relaxed font-light">
-                I am a passionate <span className="text-white font-medium">web developer</span> and <span className="text-white font-medium">UI/UX designer</span> dedicated to creating visually appealing, user-friendly, and responsive digital experiences. With strong skills in HTML, CSS, JavaScript, and modern frameworks, I focus on clean design, intuitive interfaces, and seamless functionality to deliver engaging and efficient solutions that enhance user satisfaction.
+              <p className="text-xl md:text-2xl text-foreground/70 mb-2 max-w-2xl leading-relaxed font-light">
+                I am a passionate <span className="text-foreground font-medium">web developer</span> and <span className="text-foreground font-medium">UI/UX designer</span> dedicated to creating visually appealing, user-friendly, and responsive digital experiences. With strong skills in HTML, CSS, JavaScript, and modern frameworks, I focus on clean design, intuitive interfaces, and seamless functionality to deliver engaging and efficient solutions that enhance user satisfaction.
               </p>
               
               
@@ -278,10 +278,10 @@ const HeroSection = () => {
                   {skills.map((skill, index) => (
                     <div 
                       key={skill.label}
-                      className={`group flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium hover:bg-white/20 hover:scale-105 transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                      className={`group flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 backdrop-blur-sm border border-primary/20 text-foreground text-sm font-medium hover:bg-primary/10 hover:scale-105 transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                       style={{ transitionDelay: `${600 + index * 100}ms` }}
                     >
-                      <div className={`p-1 rounded-full bg-gradient-to-r ${skill.color} group-hover:scale-110 transition-transform duration-300`}>
+                        <div className={`p-1 rounded-full bg-gradient-to-r ${skill.color} group-hover:scale-110 transition-transform duration-300`}>
                         <skill.icon className="h-3 w-3 text-white" />
                       </div>
                       {skill.label}
@@ -294,7 +294,7 @@ const HeroSection = () => {
                   {techStack.map((tech, index) => (
                     <span 
                       key={tech}
-                      className={`px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/60 text-xs font-medium hover:bg-white/10 hover:text-white/80 transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                      className={`px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-foreground/60 text-xs font-medium hover:bg-primary/10 hover:text-foreground/80 transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                       style={{ transitionDelay: `${800 + index * 50}ms` }}
                     >
                       {tech}
@@ -309,7 +309,7 @@ const HeroSection = () => {
               <Button 
                 onClick={scrollToPortfolio}
                 size="lg"
-                className="group relative bg-white text-primary hover:bg-white/95 hover:shadow-2xl hover:shadow-white/25 transition-all duration-500 font-semibold px-8 py-4 rounded-2xl overflow-hidden btn-modern"
+                className="group relative bg-primary text-white hover:bg-primary/90 hover:shadow-2xl hover:shadow-primary/25 transition-all duration-500 font-semibold px-8 py-4 rounded-2xl overflow-hidden btn-modern"
               >
                 <span className="relative z-10 flex items-center">
                   <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
@@ -333,7 +333,7 @@ const HeroSection = () => {
               <Button 
                 variant="ghost"
                 size="lg"
-                className="group text-white hover:bg-white/5 hover:shadow-lg transition-all duration-300 font-medium px-6 py-4 rounded-2xl border border-white/10 hover:border-white/30"
+                className="group text-foreground hover:bg-primary/5 hover:shadow-lg transition-all duration-300 font-medium px-6 py-4 rounded-2xl border border-primary/10 hover:border-primary/30"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <Lightbulb className="mr-2 h-5 w-5 group-hover:text-yellow-300 transition-colors duration-300" />
@@ -345,16 +345,16 @@ const HeroSection = () => {
             <div className={`grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               {achievements.map((stat, index) => (
                 <div key={stat.label} className="group relative">
-                  <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-4 text-center hover:bg-white/20 hover:border-white/30 hover:scale-105 transition-all duration-300 cursor-default relative overflow-hidden">
+                  <div className="bg-primary/5 backdrop-blur-md rounded-2xl border border-primary/20 p-4 text-center hover:bg-primary/10 hover:border-primary/30 hover:scale-105 transition-all duration-300 cursor-default relative overflow-hidden">
                     {/* Shine effect */}
-                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div>
                     
                     <div className="relative z-10">
                       <div className="flex items-center justify-center mb-2">
-                        <stat.icon className="h-4 w-4 text-white/80 group-hover:text-white group-hover:scale-110 transition-all duration-300" />
+                        <stat.icon className="h-4 w-4 text-foreground/70 group-hover:text-foreground group-hover:scale-110 transition-all duration-300" />
                       </div>
-                      <div className="text-2xl font-bold text-white mb-1 group-hover:scale-110 transition-transform duration-300">{stat.number}</div>
-                      <div className="text-xs text-white/70 font-medium">{stat.label}</div>
+                      <div className="text-2xl font-bold text-foreground mb-1 group-hover:scale-110 transition-transform duration-300">{stat.number}</div>
+                      <div className="text-xs text-foreground/60 font-medium">{stat.label}</div>
                     </div>
                   </div>
                 </div>
@@ -363,7 +363,7 @@ const HeroSection = () => {
 
             {/* New Social Proof Section */}
             <div className={`mt-8 transition-all duration-1000 delay-1100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <div className="flex items-center justify-center lg:justify-start gap-3 text-white/80 text-sm">
+              <div className="flex items-center justify-center lg:justify-start gap-3 text-foreground/70 text-sm">
                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                 <span className="font-medium">Ready to work</span>
               </div>
@@ -391,41 +391,41 @@ const HeroSection = () => {
                 </div>
                 
                 {/* Floating Status Card */}
-                <div className="absolute -top-6 -left-6 bg-white/15 backdrop-blur-md rounded-2xl p-4 border border-white/30 shadow-xl hover:bg-white/20 transition-all duration-300 cursor-default">
+                <div className="absolute -top-6 -left-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 border border-primary/20 shadow-xl hover:bg-white transition-all duration-300 cursor-default">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                    <div className="text-white font-medium text-sm">Available</div>
+                    <div className="text-foreground font-medium text-sm">Available</div>
                   </div>
                 </div>
                 
                 {/* Experience Badge */}
-                <div className="group absolute -top-4 -right-8 bg-white/20 backdrop-blur-xl rounded-3xl p-5 border border-white/40 shadow-2xl hover:shadow-[0_20px_60px_-10px_rgba(255,255,255,0.3)] hover:scale-110 hover:rotate-3 transition-all duration-500 cursor-default overflow-hidden">
+                <div className="group absolute -top-4 -right-8 bg-white/95 backdrop-blur-xl rounded-3xl p-5 border border-primary/30 shadow-2xl hover:shadow-[0_20px_60px_-10px_rgba(99,102,241,0.3)] hover:scale-110 hover:rotate-3 transition-all duration-500 cursor-default overflow-hidden">
                   {/* Animated gradient background */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/30 via-blue-500/30 to-purple-600/30 opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="absolute inset-0 bg-gradient-to-tr from-white/10 to-transparent group-hover:from-white/20 transition-all duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 via-blue-500/20 to-purple-600/20 opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent group-hover:from-primary/10 transition-all duration-500"></div>
                   
                   {/* Animated particles */}
                   <div className="absolute top-1 right-1 w-2 h-2 bg-emerald-400 rounded-full animate-ping"></div>
                   <div className="absolute bottom-2 left-2 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-300"></div>
                   
-                  <div className="relative text-center text-white">
-                    <div className="text-2xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent">🌟</div>
+                  <div className="relative text-center text-foreground">
+                    <div className="text-2xl font-bold mb-1 group-hover:scale-110 transition-transform duration-300 bg-gradient-to-r from-primary to-emerald-500 bg-clip-text text-transparent">🌟</div>
                     <div className="text-xs font-semibold tracking-wide opacity-90 group-hover:opacity-100 transition-opacity duration-300">Fresher<br/>Developer</div>
                   </div>
                 </div>
                 
                 {/* Skills Orbit */}
-                <div className="absolute -bottom-8 -left-8 bg-white/15 backdrop-blur-md rounded-2xl p-3 border border-white/30 shadow-xl hover:bg-white/20 transition-all duration-300 cursor-default">
+                <div className="absolute -bottom-8 -left-8 bg-white/95 backdrop-blur-md rounded-2xl p-3 border border-primary/20 shadow-xl hover:bg-white transition-all duration-300 cursor-default">
                   <div className="flex items-center gap-2">
-                    <Code className="h-4 w-4 text-white" />
-                    <span className="text-white text-sm font-medium">Developer</span>
+                    <Code className="h-4 w-4 text-primary" />
+                    <span className="text-foreground text-sm font-medium">Developer</span>
                   </div>
                 </div>
                 
-                <div className="absolute -bottom-4 -right-12 bg-white/15 backdrop-blur-md rounded-2xl p-3 border border-white/30 shadow-xl hover:bg-white/20 transition-all duration-300 cursor-default">
+                <div className="absolute -bottom-4 -right-12 bg-white/95 backdrop-blur-md rounded-2xl p-3 border border-secondary/20 shadow-xl hover:bg-white transition-all duration-300 cursor-default">
                   <div className="flex items-center gap-2">
-                    <Palette className="h-4 w-4 text-white" />
-                    <span className="text-white text-sm font-medium">Designer</span>
+                    <Palette className="h-4 w-4 text-secondary" />
+                    <span className="text-foreground text-sm font-medium">Designer</span>
                   </div>
                 </div>
                 
@@ -442,11 +442,11 @@ const HeroSection = () => {
       <div className={`absolute bottom-8 left-1/2 transform -translate-x-1/2 transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="group cursor-pointer" onClick={scrollToPortfolio}>
           <div className="flex flex-col items-center space-y-2">
-            <span className="text-white/70 text-xs font-medium uppercase tracking-wider group-hover:text-white transition-colors duration-300">
+            <span className="text-foreground/60 text-xs font-medium uppercase tracking-wider group-hover:text-foreground transition-colors duration-300">
               Scroll Down
             </span>
-            <div className="w-6 h-10 border-2 border-white/40 rounded-full flex justify-center group-hover:border-white/70 transition-all duration-300 bg-white/5 backdrop-blur-sm">
-              <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-bounce group-hover:bg-white transition-colors duration-300"></div>
+            <div className="w-6 h-10 border-2 border-primary/40 rounded-full flex justify-center group-hover:border-primary/70 transition-all duration-300 bg-primary/5 backdrop-blur-sm">
+              <div className="w-1 h-3 bg-primary/70 rounded-full mt-2 animate-bounce group-hover:bg-primary transition-colors duration-300"></div>
             </div>
           </div>
         </div>
