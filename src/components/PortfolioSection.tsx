@@ -58,9 +58,6 @@ const PortfolioSection = () => {
     <section id="portfolio" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-display font-bold text-4xl md:text-5xl mb-6 bg-text-gradient bg-clip-text text-transparent">
-            My Portfolio
-          </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             A showcase of my recent projects demonstrating my skills in web development and UI/UX design
           </p>
