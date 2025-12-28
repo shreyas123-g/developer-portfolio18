@@ -2,16 +2,16 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github } from 'lucide-react';
-import rockPaperScissors from '@/assets/rock-paper-scissors.jpg';
 import secureWallet from '@/assets/secure-wallet.jpg';
+import carPricePrediction from '@/assets/car-price-prediction.jpg';
 
 const PortfolioSection = () => {
   const projects = [
     {
-      title: "Interactive Rock Paper Scissors Game",
-      description: "A fully interactive Rock Paper Scissors game with dynamic UI updates, score tracking, and responsive design. Features smooth animations and localStorage for game persistence.",
-      image: rockPaperScissors,
-      technologies: ["HTML", "CSS", "JavaScript", "localStorage", "Responsive Design"],
+      title: "Car Price Prediction",
+      description: "An intelligent car price prediction system using machine learning algorithms to analyze market trends, vehicle specifications, and historical data to provide accurate price estimates for automobiles.",
+      image: carPricePrediction,
+      technologies: ["Python", "MongoDB", "UI/UX Design"],
       liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       featured: true,
@@ -24,6 +24,15 @@ const PortfolioSection = () => {
       liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       featured: true,
+    },
+    {
+      title: "Interactive Rock Paper Scissors Game",
+      description: "A fully interactive Rock Paper Scissors game with dynamic UI updates, score tracking, and responsive design. Features smooth animations and localStorage for game persistence.",
+      image: null,
+      technologies: ["HTML", "CSS", "JavaScript", "localStorage", "Responsive Design"],
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      featured: false,
     },
     {
       title: "YouTube Clone Webpage",
