@@ -12,8 +12,8 @@ const PortfolioSection = () => {
       description: "An intelligent car price prediction system using machine learning algorithms to analyze market trends, vehicle specifications, and historical data to provide accurate price estimates for automobiles.",
       image: carPricePrediction,
       technologies: ["Python", "MongoDB", "UI/UX Design"],
-      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
-      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      liveUrl: "https://github.com/shreyas123-g/car-prize-prediction",
+      githubUrl: "https://github.com/shreyas123-g/car-prize-prediction",
       featured: true,
     },
     {
@@ -21,8 +21,8 @@ const PortfolioSection = () => {
       description: "A secure digital wallet application with encrypted transactions, real-time balance tracking, and multi-factor authentication. Features a modern dashboard for managing finances safely.",
       image: secureWallet,
       technologies: ["Python", "MongoDB"],
-      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
-      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      liveUrl: "https://github.com/shreyas123-g/main-project-of-coin",
+      githubUrl: "https://github.com/shreyas123-g/main-project-of-coin",
       featured: true,
     },
     {
@@ -30,8 +30,8 @@ const PortfolioSection = () => {
       description: "A fully interactive Rock Paper Scissors game with dynamic UI updates, score tracking, and responsive design. Features smooth animations and localStorage for game persistence.",
       image: null,
       technologies: ["HTML", "CSS", "JavaScript", "localStorage", "Responsive Design"],
-      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
-      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project13",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project13",
       featured: false,
     },
     {
