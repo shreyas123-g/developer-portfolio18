@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github } from 'lucide-react';
 import rockPaperScissors from '@/assets/rock-paper-scissors.jpg';
-import youtubeClone from '@/assets/youtube-clone.jpg';
+import secureWallet from '@/assets/secure-wallet.jpg';
 
 const PortfolioSection = () => {
   const projects = [
@@ -17,13 +17,22 @@ const PortfolioSection = () => {
       featured: true,
     },
     {
-      title: "YouTube Clone Webpage",
-      description: "A static YouTube homepage clone featuring a fixed header, responsive sidebar, video grid layout, and modern UI elements. Showcases advanced CSS Grid and Flexbox techniques.",
-      image: youtubeClone,
-      technologies: ["HTML", "CSS", "JavaScript", "CSS Grid", "Responsive Design"],
+      title: "Secure Wallet",
+      description: "A secure digital wallet application with encrypted transactions, real-time balance tracking, and multi-factor authentication. Features a modern dashboard for managing finances safely.",
+      image: secureWallet,
+      technologies: ["Python", "MongoDB"],
       liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
       featured: true,
+    },
+    {
+      title: "YouTube Clone Webpage",
+      description: "A static YouTube homepage clone featuring a fixed header, responsive sidebar, video grid layout, and modern UI elements. Showcases advanced CSS Grid and Flexbox techniques.",
+      image: null,
+      technologies: ["HTML", "CSS", "JavaScript", "CSS Grid", "Responsive Design"],
+      liveUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      githubUrl: "https://github.com/shreyas123-g/Shreyas-Project1-",
+      featured: false,
     },
     {
       title: "Growthspace Website",
