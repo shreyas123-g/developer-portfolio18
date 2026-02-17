@@ -4,9 +4,19 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github } from 'lucide-react';
 import secureWallet from '@/assets/secure-wallet.jpg';
 import carPricePrediction from '@/assets/car-price-prediction.jpg';
+import jobTracker from '@/assets/job-tracker.jpg';
 
 const PortfolioSection = () => {
   const projects = [
+    {
+      title: "Job Tracker Application",
+      description: "An AI-powered job tracking application that helps users manage and organize their job applications efficiently. Features intelligent job recommendations, application status tracking, analytics dashboard, and AI-driven insights to optimize the job search process.",
+      image: jobTracker,
+      technologies: ["Python", "AI/ML", "Data Analytics", "UI/UX Design"],
+      liveUrl: "https://github.com/shreyas123-g/job-tracker",
+      githubUrl: "https://github.com/shreyas123-g/job-tracker",
+      featured: true,
+    },
     {
       title: "Car Price Prediction",
       description: "An intelligent car price prediction system using machine learning algorithms to analyze market trends, vehicle specifications, and historical data to provide accurate price estimates for automobiles.",
