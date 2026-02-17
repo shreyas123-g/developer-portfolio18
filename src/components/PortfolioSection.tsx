@@ -5,9 +5,19 @@ import { ExternalLink, Github } from 'lucide-react';
 import secureWallet from '@/assets/secure-wallet.jpg';
 import carPricePrediction from '@/assets/car-price-prediction.jpg';
 import jobTracker from '@/assets/job-tracker.jpg';
+import placementPrediction from '@/assets/placement-prediction.jpg';
 
 const PortfolioSection = () => {
   const projects = [
+    {
+      title: "Placement Prediction System",
+      description: "An AI-driven placement prediction system that uses machine learning algorithms to analyze student academic performance, skills, and market trends to predict placement outcomes. Features data visualization, predictive analytics, and actionable insights for career planning.",
+      image: placementPrediction,
+      technologies: ["Python", "AI/ML", "Data Analytics", "UI/UX Design"],
+      liveUrl: "https://github.com/shreyas123-g/placement",
+      githubUrl: "https://github.com/shreyas123-g/placement",
+      featured: true,
+    },
     {
       title: "Job Tracker Application",
       description: "An AI-powered job tracking application that helps users manage and organize their job applications efficiently. Features intelligent job recommendations, application status tracking, analytics dashboard, and AI-driven insights to optimize the job search process.",
