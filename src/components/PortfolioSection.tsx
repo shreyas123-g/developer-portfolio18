@@ -6,9 +6,19 @@ import secureWallet from '@/assets/secure-wallet.jpg';
 import carPricePrediction from '@/assets/car-price-prediction.jpg';
 import jobTracker from '@/assets/job-tracker.jpg';
 import placementPrediction from '@/assets/placement-prediction.jpg';
+import aiResumeBuilder from '@/assets/ai-resume-builder.jpg';
 
 const PortfolioSection = () => {
   const projects = [
+    {
+      title: "AI Resume Builder",
+      description: "An intelligent resume builder powered by AI that automatically generates professional resumes tailored to specific job descriptions. Features smart content suggestions, ATS optimization, skill matching, and multiple template designs to help candidates stand out.",
+      image: aiResumeBuilder,
+      technologies: ["Python", "AI/ML", "Data Analytics", "UI/UX Design"],
+      liveUrl: "https://github.com/shreyas123-g/AI-Resume-builder",
+      githubUrl: "https://github.com/shreyas123-g/AI-Resume-builder",
+      featured: true,
+    },
     {
       title: "Placement Prediction System",
       description: "An AI-driven placement prediction system that uses machine learning algorithms to analyze student academic performance, skills, and market trends to predict placement outcomes. Features data visualization, predictive analytics, and actionable insights for career planning.",
