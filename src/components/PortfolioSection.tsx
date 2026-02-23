@@ -8,9 +8,19 @@ import jobTracker from '@/assets/job-tracker.jpg';
 import placementPrediction from '@/assets/placement-prediction.jpg';
 import aiResumeBuilder from '@/assets/ai-resume-builder.jpg';
 import cinemateBooking from '@/assets/cinemate-booking.jpg';
+import weatherApp from '@/assets/weather-app.jpg';
 
 const PortfolioSection = () => {
   const projects = [
+    {
+      title: "AI Weather Forecast App",
+      description: "An AI-powered weather forecasting application that provides real-time weather updates, 7-day forecasts, and intelligent climate analytics. Features location-based predictions, interactive weather maps, humidity and wind speed visualizations, and smart alerts powered by machine learning.",
+      image: weatherApp,
+      technologies: ["Python", "AI/ML", "Data Analytics", "UI/UX Design"],
+      liveUrl: "https://deployed-weather-eight.vercel.app/",
+      githubUrl: "https://deployed-weather-eight.vercel.app/",
+      featured: true,
+    },
     {
       title: "CineMate - Movie Booking Platform",
       description: "An AI-enhanced movie booking platform that offers personalized movie recommendations, intelligent seat selection, and seamless ticket booking. Features real-time showtime updates, smart pricing analytics, user preference learning, and an intuitive UI for a premium cinema experience.",
