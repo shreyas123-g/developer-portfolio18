@@ -9,9 +9,19 @@ import placementPrediction from '@/assets/placement-prediction.jpg';
 import aiResumeBuilder from '@/assets/ai-resume-builder.jpg';
 import cinemateBooking from '@/assets/cinemate-booking.jpg';
 import weatherApp from '@/assets/weather-app.jpg';
+import netflixTvgo from '@/assets/netflix-tvgo.jpg';
 
 const PortfolioSection = () => {
   const projects = [
+    {
+      title: "Cinema TVGo - Streaming Platform",
+      description: "An AI-powered Netflix-style streaming platform that delivers personalized movie and TV show recommendations using machine learning algorithms. Features intelligent content curation, trending analytics, user preference learning, watchlist management, and a sleek dark-themed UI for an immersive viewing experience.",
+      image: netflixTvgo,
+      technologies: ["Python", "AI/ML", "Data Analytics", "UI/UX Design"],
+      liveUrl: "https://netflix-application-cinema-tvgo.vercel.app/",
+      githubUrl: "https://netflix-application-cinema-tvgo.vercel.app/",
+      featured: true,
+    },
     {
       title: "AI Weather Forecast App",
       description: "An AI-powered weather forecasting application that provides real-time weather updates, 7-day forecasts, and intelligent climate analytics. Features location-based predictions, interactive weather maps, humidity and wind speed visualizations, and smart alerts powered by machine learning.",
