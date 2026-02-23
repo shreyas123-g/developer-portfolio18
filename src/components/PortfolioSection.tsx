@@ -7,9 +7,19 @@ import carPricePrediction from '@/assets/car-price-prediction.jpg';
 import jobTracker from '@/assets/job-tracker.jpg';
 import placementPrediction from '@/assets/placement-prediction.jpg';
 import aiResumeBuilder from '@/assets/ai-resume-builder.jpg';
+import cinemateBooking from '@/assets/cinemate-booking.jpg';
 
 const PortfolioSection = () => {
   const projects = [
+    {
+      title: "CineMate - Movie Booking Platform",
+      description: "An AI-enhanced movie booking platform that offers personalized movie recommendations, intelligent seat selection, and seamless ticket booking. Features real-time showtime updates, smart pricing analytics, user preference learning, and an intuitive UI for a premium cinema experience.",
+      image: cinemateBooking,
+      technologies: ["Python", "AI/ML", "Data Analytics", "UI/UX Design"],
+      liveUrl: "https://cinemate-booking01.vercel.app/",
+      githubUrl: "https://cinemate-booking01.vercel.app/",
+      featured: true,
+    },
     {
       title: "AI Resume Builder",
       description: "An intelligent resume builder powered by AI that automatically generates professional resumes tailored to specific job descriptions. Features smart content suggestions, ATS optimization, skill matching, and multiple template designs to help candidates stand out.",
