@@ -222,11 +222,11 @@ const HeroSection = () => {
             {/* Time & Location Badge */}
             <div className={`mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="flex items-center justify-center lg:justify-start gap-4 mb-4">
-                <Badge className="bg-primary/10 backdrop-blur-sm text-foreground border-primary/20 hover:bg-primary/20 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
+                <Badge className="bg-primary/15 backdrop-blur-sm text-foreground border-primary/30 hover:bg-primary/25 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
                   <Coffee className="w-3 h-3 mr-1.5" />
                   Ujire, India • {currentTime}
                 </Badge>
-                <Badge className="bg-secondary/10 backdrop-blur-sm text-foreground border-secondary/20 hover:bg-secondary/20 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
+                <Badge className="bg-secondary/15 backdrop-blur-sm text-foreground border-secondary/30 hover:bg-secondary/25 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
                   <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
                   Available for work
                 </Badge>
