@@ -297,7 +297,7 @@ const HeroSection = () => {
                   {techStack.map((tech, index) => (
                     <span 
                       key={tech}
-                      className={`px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-foreground/60 text-xs font-medium hover:bg-primary/10 hover:text-foreground/80 transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                      className={`px-3 py-1 rounded-full bg-muted/40 border border-primary/10 text-muted-foreground text-xs font-medium hover:bg-muted/60 hover:text-foreground transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                       style={{ transitionDelay: `${800 + index * 50}ms` }}
                     >
                       {tech}
