@@ -422,7 +422,7 @@ Shreyas Gowda
                 </div>
                 
                 {/* Floating Status Card */}
-                <div className="absolute -top-6 -left-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 border border-primary/20 shadow-xl hover:bg-white transition-all duration-300 cursor-default">
+                <div className="absolute -top-6 -left-6 bg-card/90 backdrop-blur-md rounded-2xl p-4 border border-primary/30 shadow-xl shadow-primary/10 hover:bg-card transition-all duration-300 cursor-default animate-float3d">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                     <div className="text-foreground font-medium text-sm">Available</div>
