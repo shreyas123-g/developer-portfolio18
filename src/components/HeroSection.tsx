@@ -112,18 +112,48 @@ const HeroSection = () => {
   const techStack = ['Figma', 'UI/UX', 'Lightroom', 'JavaScript', 'Java', 'HTML', 'CSS'];
 
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden bg-white">
-      {/* Light Gradient Background with Multiple Layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
+    <section id="home" className="min-h-screen relative overflow-hidden bg-background">
+      {/* Dark Gradient Background with Multiple Layers */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted"></div>
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-secondary/5"></div>
       <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-accent/3 to-primary/3"></div>
+      
+      {/* 3D Animated Geometric Shapes */}
+      <div className="absolute inset-0 overflow-hidden perspective-1000">
+        {/* 3D Rotating Cube */}
+        <div className="absolute top-20 left-[10%] w-16 h-16 animate-cube-spin opacity-20">
+          <div className="w-full h-full bg-gradient-to-br from-primary to-accent rounded-lg"></div>
+        </div>
+        
+        {/* Orbiting elements */}
+        <div className="absolute top-1/3 right-[15%] w-4 h-4">
+          <div className="animate-orbit">
+            <div className="w-4 h-4 bg-secondary rounded-full shadow-lg shadow-secondary/50"></div>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-1/3 left-[20%] w-3 h-3">
+          <div className="animate-orbit" style={{ animationDuration: '12s', animationDirection: 'reverse' }}>
+            <div className="w-3 h-3 bg-primary-glow rounded-full shadow-lg shadow-primary/50"></div>
+          </div>
+        </div>
+        
+        {/* 3D Floating shapes */}
+        <div className="absolute top-1/4 right-1/4 w-20 h-20 animate-float3d opacity-15">
+          <div className="w-full h-full bg-gradient-to-br from-secondary/40 to-transparent rounded-2xl border border-secondary/20"></div>
+        </div>
+        
+        <div className="absolute bottom-1/4 left-[15%] w-12 h-12 animate-tilt3d opacity-20">
+          <div className="w-full h-full bg-gradient-to-br from-accent/40 to-transparent rounded-xl border border-accent/20"></div>
+        </div>
+      </div>
       
       {/* Enhanced Animated Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {particles.map((particle) => (
           <div
             key={particle.id}
-            className="absolute rounded-full bg-primary/20 animate-pulse blur-[0.5px]"
+            className="absolute rounded-full bg-primary/30 animate-pulse blur-[0.5px]"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
@@ -136,78 +166,51 @@ const HeroSection = () => {
           />
         ))}
         
-        {/* Floating Elements */}
+        {/* Floating Elements with 3D */}
         {floatingElements.map((element) => (
           <div
             key={element.id}
-            className="absolute w-8 h-8 opacity-20"
+            className="absolute w-8 h-8 opacity-15"
             style={{
               left: `${element.x}%`,
               top: `${element.y}%`,
-              transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px) rotate(${element.rotation + scrollY * 0.1}deg) scale(${element.scale})`,
+              transform: `perspective(500px) translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px) rotateX(${mousePosition.y * 0.5}deg) rotateY(${mousePosition.x * 0.5}deg) rotate(${element.rotation + scrollY * 0.1}deg) scale(${element.scale})`,
               transition: 'transform 0.1s ease-out'
             }}
           >
-            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/10 rounded-lg backdrop-blur-sm animate-pulse"></div>
+            <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/10 rounded-lg backdrop-blur-sm animate-pulse"></div>
           </div>
         ))}
       </div>
       
-      {/* Enhanced Dynamic Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Geometric Shapes with Enhanced Animation */}
+      {/* 3D Dynamic Background Elements */}
+      <div className="absolute inset-0 overflow-hidden perspective-1000">
         <div 
-          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-secondary/20 to-accent/10 rounded-3xl rotate-12 animate-pulse blur-sm hover:blur-none transition-all duration-500"
+          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-secondary/15 to-accent/5 rounded-3xl animate-float3d blur-sm"
           style={{ 
-            transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px) rotate(${12 + mousePosition.x * 0.1}deg)` 
+            transform: `perspective(800px) translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px) rotateX(${mousePosition.y * 0.2}deg) rotateY(${mousePosition.x * 0.2}deg)` 
           }}
         ></div>
         <div 
-          className="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-br from-primary-glow/30 to-primary/20 rounded-full animate-bounce shadow-lg shadow-primary/10"
+          className="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-br from-primary-glow/20 to-primary/10 rounded-full animate-float3d shadow-lg shadow-primary/20"
           style={{ 
-            transform: `translate(${-mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`,
-            animationDelay: '0.5s'
+            transform: `perspective(800px) translate(${-mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px) rotateY(${-mousePosition.x * 0.3}deg)`,
+            animationDelay: '2s'
           }}
         ></div>
         <div 
-          className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-accent/30 to-secondary/20 rounded-2xl rotate-45 animate-pulse"
+          className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-accent/20 to-secondary/10 rounded-2xl animate-tilt3d"
           style={{ 
-            transform: `translate(${mousePosition.x * 0.4}px, ${-mousePosition.y * 0.4}px) rotate(${45 + mousePosition.y * 0.1}deg)`,
             animationDelay: '1s'
           }}
         ></div>
         
-        {/* New Floating Elements */}
-        <div 
-          className="absolute top-1/2 left-10 w-16 h-16 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full animate-pulse"
-          style={{ 
-            transform: `translate(${mousePosition.x * 0.2}px, ${-mousePosition.y * 0.6}px)`,
-            animationDelay: '1.5s'
-          }}
-        ></div>
-        <div 
-          className="absolute bottom-20 right-1/3 w-12 h-12 bg-gradient-to-br from-emerald-500/30 to-teal-500/20 rounded-lg rotate-12 animate-bounce"
-          style={{ 
-            transform: `translate(${-mousePosition.x * 0.7}px, ${mousePosition.y * 0.2}px) rotate(${12 - mousePosition.x * 0.05}deg)`,
-            animationDelay: '2s'
-          }}
-        ></div>
-        
-        {/* Enhanced Grid Pattern with Animation */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="w-full h-full animate-pulse" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.04]">
+          <div className="w-full h-full" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(248 95% 70% / 0.3) 1px, transparent 0)`,
             backgroundSize: '40px 40px',
-            animationDuration: '4s'
           }}></div>
-        </div>
-
-        {/* Floating Code Snippets Effect */}
-        <div className="absolute top-1/4 right-1/4 opacity-20 text-white/50 font-mono text-xs animate-pulse">
-          &lt;code/&gt;
-        </div>
-        <div className="absolute bottom-1/4 left-1/3 opacity-20 text-white/50 font-mono text-xs animate-pulse" style={{ animationDelay: '1s' }}>
-          {`{ design: 'modern' }`}
         </div>
       </div>
       
