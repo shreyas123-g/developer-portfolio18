@@ -446,7 +446,7 @@ Shreyas Gowda
                 </div>
                 
                 {/* Skills Orbit */}
-                <div className="absolute -bottom-8 -left-8 bg-white/95 backdrop-blur-md rounded-2xl p-3 border border-primary/20 shadow-xl hover:bg-white transition-all duration-300 cursor-default">
+                <div className="absolute -bottom-8 -left-8 bg-card/95 backdrop-blur-md rounded-2xl p-3 border border-primary/20 shadow-xl shadow-primary/10 hover:bg-card transition-all duration-300 cursor-default animate-float3d" style={{ animationDelay: '1s' }}>
                   <div className="flex items-center gap-2">
                     <Code className="h-4 w-4 text-primary" />
                     <span className="text-foreground text-sm font-medium">Developer</span>
