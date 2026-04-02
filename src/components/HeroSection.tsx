@@ -376,7 +376,7 @@ Shreyas Gowda
             <div className={`grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               {achievements.map((stat, index) => (
                 <div key={stat.label} className="group relative">
-                  <div className="bg-primary/5 backdrop-blur-md rounded-2xl border border-primary/20 p-4 text-center hover:bg-primary/10 hover:border-primary/30 hover:scale-105 transition-all duration-300 cursor-default relative overflow-hidden">
+                  <div className="bg-muted/80 backdrop-blur-md rounded-2xl border border-primary/20 p-4 text-center hover:bg-muted hover:border-primary/40 hover:scale-105 transition-all duration-300 cursor-default relative overflow-hidden animate-pulse-glow-3d">
                     {/* Shine effect */}
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div>
                     
