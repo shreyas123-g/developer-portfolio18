@@ -6,46 +6,46 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 15% 25%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 15% 25%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 25%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
 
-    /* Vibrant blue primary inspired by reference */
+    /* Vibrant blue primary */
     --primary: 248 95% 70%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 248 100% 80%;
 
-    /* Energetic orange secondary */
-    --secondary: 38 100% 65%;
-    --secondary-foreground: 0 0% 100%;
+    /* Golden yellow secondary */
+    --secondary: 45 100% 55%;
+    --secondary-foreground: 0 0% 5%;
 
-    /* Soft grays for balance */
-    --muted: 220 15% 96%;
-    --muted-foreground: 220 10% 55%;
+    /* Dark muted tones */
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
 
-    /* Bright accent colors */
+    /* Bright accent */
     --accent: 268 85% 75%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 90%;
-    --input: 220 15% 94%;
+    --border: 0 0% 16%;
+    --input: 0 0% 14%;
     --ring: 248 95% 70%;
 
     --radius: 1rem;
 
     /* Custom portfolio colors */
-    --hero-bg: linear-gradient(135deg, hsl(248 95% 70%), hsl(38 100% 65%));
+    --hero-bg: linear-gradient(135deg, hsl(248 95% 70%), hsl(45 100% 55%));
     --hero-secondary: linear-gradient(45deg, hsl(268 85% 75%), hsl(195 100% 75%));
-    --card-hover: 0 20px 40px -10px hsl(248 95% 70% / 0.3);
-    --text-gradient: linear-gradient(135deg, hsl(248 95% 60%), hsl(268 85% 65%));
+    --card-hover: 0 20px 40px -10px hsl(248 95% 70% / 0.4);
+    --text-gradient: linear-gradient(135deg, hsl(45 100% 55%), hsl(248 95% 80%));
     
   /* Animation properties */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
