@@ -281,7 +281,7 @@ const HeroSection = () => {
                   {skills.map((skill, index) => (
                     <div 
                       key={skill.label}
-                      className={`group flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 backdrop-blur-sm border border-primary/20 text-foreground text-sm font-medium hover:bg-primary/10 hover:scale-105 transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                      className={`group flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 backdrop-blur-sm border border-primary/20 text-foreground text-sm font-medium hover:bg-muted hover:scale-105 transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                       style={{ transitionDelay: `${600 + index * 100}ms` }}
                     >
                         <div className={`p-1 rounded-full bg-gradient-to-r ${skill.color} group-hover:scale-110 transition-transform duration-300`}>
