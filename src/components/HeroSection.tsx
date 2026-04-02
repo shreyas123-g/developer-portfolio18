@@ -430,7 +430,7 @@ Shreyas Gowda
                 </div>
                 
                 {/* Experience Badge */}
-                <div className="group absolute -top-4 -right-8 bg-white/95 backdrop-blur-xl rounded-3xl p-5 border border-primary/30 shadow-2xl hover:shadow-[0_20px_60px_-10px_rgba(99,102,241,0.3)] hover:scale-110 hover:rotate-3 transition-all duration-500 cursor-default overflow-hidden">
+                <div className="group absolute -top-4 -right-8 bg-card/95 backdrop-blur-xl rounded-3xl p-5 border border-primary/30 shadow-2xl shadow-primary/20 hover:shadow-[0_20px_60px_-10px_rgba(99,102,241,0.4)] hover:scale-110 hover:rotate-3 transition-all duration-500 cursor-default overflow-hidden animate-tilt3d">
                   {/* Animated gradient background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 via-blue-500/20 to-purple-600/20 opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent group-hover:from-primary/10 transition-all duration-500"></div>
