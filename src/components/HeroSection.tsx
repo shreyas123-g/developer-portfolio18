@@ -410,8 +410,8 @@ Shreyas Gowda
               {/* Main Profile Container */}
               <div className="relative w-80 h-80 lg:w-96 lg:h-96">
                 {/* Profile Image with Modern Border */}
-                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 shadow-2xl backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20 backdrop-blur-sm animate-pulse-glow-3d">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
                   <img 
                     src={shreyasProfile} 
                     alt="Shreyas - Web Developer & UI/UX Designer"
