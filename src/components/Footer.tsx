@@ -89,7 +89,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="p-2 bg-background rounded-lg hover:bg-hero-gradient hover:text-white transition-all duration-300 hover:shadow-glow"
+                  className="p-2 bg-muted rounded-lg hover:bg-hero-gradient hover:text-foreground transition-all duration-300 hover:shadow-glow"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />

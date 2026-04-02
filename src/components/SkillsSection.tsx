@@ -42,7 +42,14 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-muted/30">
+    <section id="skills" className="py-20 bg-muted/20 relative overflow-hidden perspective-1000">
+      {/* 3D Background decorations */}
+      <div className="absolute top-20 left-[5%] w-14 h-14 animate-rotate3d-y opacity-10">
+        <div className="w-full h-full bg-gradient-to-br from-secondary to-accent rounded-lg"></div>
+      </div>
+      <div className="absolute bottom-10 right-[10%] w-10 h-10 animate-cube-spin opacity-10">
+        <div className="w-full h-full bg-gradient-to-br from-primary to-primary-glow rounded-md"></div>
+      </div>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-display font-bold text-4xl md:text-5xl mb-6 bg-text-gradient bg-clip-text text-transparent">

@@ -24,7 +24,14 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="py-20 bg-background relative overflow-hidden perspective-1000">
+      {/* 3D Background elements */}
+      <div className="absolute top-10 right-10 w-20 h-20 animate-cube-spin opacity-10">
+        <div className="w-full h-full bg-gradient-to-br from-primary to-secondary rounded-lg"></div>
+      </div>
+      <div className="absolute bottom-20 left-10 w-16 h-16 animate-float3d opacity-10">
+        <div className="w-full h-full bg-gradient-to-br from-accent to-primary rounded-xl"></div>
+      </div>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <div className="w-24 h-1 bg-hero-gradient mx-auto rounded-full"></div>
