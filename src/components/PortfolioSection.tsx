@@ -133,7 +133,14 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-background">
+    <section id="portfolio" className="py-20 bg-background relative overflow-hidden perspective-1000">
+      {/* 3D Background decorations */}
+      <div className="absolute top-10 left-[8%] w-12 h-12 animate-float3d opacity-10">
+        <div className="w-full h-full bg-gradient-to-br from-primary to-accent rounded-lg"></div>
+      </div>
+      <div className="absolute bottom-20 right-[5%] w-16 h-16 animate-tilt3d opacity-10">
+        <div className="w-full h-full bg-gradient-to-br from-secondary to-primary rounded-xl"></div>
+      </div>
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">

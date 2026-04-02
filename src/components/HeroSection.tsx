@@ -112,18 +112,48 @@ const HeroSection = () => {
   const techStack = ['Figma', 'UI/UX', 'Lightroom', 'JavaScript', 'Java', 'HTML', 'CSS'];
 
   return (
-    <section id="home" className="min-h-screen relative overflow-hidden bg-white">
-      {/* Light Gradient Background with Multiple Layers */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white"></div>
+    <section id="home" className="min-h-screen relative overflow-hidden bg-background">
+      {/* Dark Gradient Background with Multiple Layers */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted"></div>
       <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 via-transparent to-secondary/5"></div>
       <div className="absolute inset-0 bg-gradient-to-bl from-transparent via-accent/3 to-primary/3"></div>
+      
+      {/* 3D Animated Geometric Shapes */}
+      <div className="absolute inset-0 overflow-hidden perspective-1000">
+        {/* 3D Rotating Cube */}
+        <div className="absolute top-20 left-[10%] w-16 h-16 animate-cube-spin opacity-20">
+          <div className="w-full h-full bg-gradient-to-br from-primary to-accent rounded-lg"></div>
+        </div>
+        
+        {/* Orbiting elements */}
+        <div className="absolute top-1/3 right-[15%] w-4 h-4">
+          <div className="animate-orbit">
+            <div className="w-4 h-4 bg-secondary rounded-full shadow-lg shadow-secondary/50"></div>
+          </div>
+        </div>
+        
+        <div className="absolute bottom-1/3 left-[20%] w-3 h-3">
+          <div className="animate-orbit" style={{ animationDuration: '12s', animationDirection: 'reverse' }}>
+            <div className="w-3 h-3 bg-primary-glow rounded-full shadow-lg shadow-primary/50"></div>
+          </div>
+        </div>
+        
+        {/* 3D Floating shapes */}
+        <div className="absolute top-1/4 right-1/4 w-20 h-20 animate-float3d opacity-15">
+          <div className="w-full h-full bg-gradient-to-br from-secondary/40 to-transparent rounded-2xl border border-secondary/20"></div>
+        </div>
+        
+        <div className="absolute bottom-1/4 left-[15%] w-12 h-12 animate-tilt3d opacity-20">
+          <div className="w-full h-full bg-gradient-to-br from-accent/40 to-transparent rounded-xl border border-accent/20"></div>
+        </div>
+      </div>
       
       {/* Enhanced Animated Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {particles.map((particle) => (
           <div
             key={particle.id}
-            className="absolute rounded-full bg-primary/20 animate-pulse blur-[0.5px]"
+            className="absolute rounded-full bg-primary/30 animate-pulse blur-[0.5px]"
             style={{
               left: `${particle.x}%`,
               top: `${particle.y}%`,
@@ -136,78 +166,51 @@ const HeroSection = () => {
           />
         ))}
         
-        {/* Floating Elements */}
+        {/* Floating Elements with 3D */}
         {floatingElements.map((element) => (
           <div
             key={element.id}
-            className="absolute w-8 h-8 opacity-20"
+            className="absolute w-8 h-8 opacity-15"
             style={{
               left: `${element.x}%`,
               top: `${element.y}%`,
-              transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px) rotate(${element.rotation + scrollY * 0.1}deg) scale(${element.scale})`,
+              transform: `perspective(500px) translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px) rotateX(${mousePosition.y * 0.5}deg) rotateY(${mousePosition.x * 0.5}deg) rotate(${element.rotation + scrollY * 0.1}deg) scale(${element.scale})`,
               transition: 'transform 0.1s ease-out'
             }}
           >
-            <div className="w-full h-full bg-gradient-to-br from-primary/20 to-secondary/10 rounded-lg backdrop-blur-sm animate-pulse"></div>
+            <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary/10 rounded-lg backdrop-blur-sm animate-pulse"></div>
           </div>
         ))}
       </div>
       
-      {/* Enhanced Dynamic Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Floating Geometric Shapes with Enhanced Animation */}
+      {/* 3D Dynamic Background Elements */}
+      <div className="absolute inset-0 overflow-hidden perspective-1000">
         <div 
-          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-secondary/20 to-accent/10 rounded-3xl rotate-12 animate-pulse blur-sm hover:blur-none transition-all duration-500"
+          className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-secondary/15 to-accent/5 rounded-3xl animate-float3d blur-sm"
           style={{ 
-            transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px) rotate(${12 + mousePosition.x * 0.1}deg)` 
+            transform: `perspective(800px) translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px) rotateX(${mousePosition.y * 0.2}deg) rotateY(${mousePosition.x * 0.2}deg)` 
           }}
         ></div>
         <div 
-          className="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-br from-primary-glow/30 to-primary/20 rounded-full animate-bounce shadow-lg shadow-primary/10"
+          className="absolute top-1/3 right-20 w-24 h-24 bg-gradient-to-br from-primary-glow/20 to-primary/10 rounded-full animate-float3d shadow-lg shadow-primary/20"
           style={{ 
-            transform: `translate(${-mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`,
-            animationDelay: '0.5s'
+            transform: `perspective(800px) translate(${-mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px) rotateY(${-mousePosition.x * 0.3}deg)`,
+            animationDelay: '2s'
           }}
         ></div>
         <div 
-          className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-accent/30 to-secondary/20 rounded-2xl rotate-45 animate-pulse"
+          className="absolute bottom-1/3 left-1/4 w-20 h-20 bg-gradient-to-br from-accent/20 to-secondary/10 rounded-2xl animate-tilt3d"
           style={{ 
-            transform: `translate(${mousePosition.x * 0.4}px, ${-mousePosition.y * 0.4}px) rotate(${45 + mousePosition.y * 0.1}deg)`,
             animationDelay: '1s'
           }}
         ></div>
         
-        {/* New Floating Elements */}
-        <div 
-          className="absolute top-1/2 left-10 w-16 h-16 bg-gradient-to-r from-pink-500/20 to-purple-500/20 rounded-full animate-pulse"
-          style={{ 
-            transform: `translate(${mousePosition.x * 0.2}px, ${-mousePosition.y * 0.6}px)`,
-            animationDelay: '1.5s'
-          }}
-        ></div>
-        <div 
-          className="absolute bottom-20 right-1/3 w-12 h-12 bg-gradient-to-br from-emerald-500/30 to-teal-500/20 rounded-lg rotate-12 animate-bounce"
-          style={{ 
-            transform: `translate(${-mousePosition.x * 0.7}px, ${mousePosition.y * 0.2}px) rotate(${12 - mousePosition.x * 0.05}deg)`,
-            animationDelay: '2s'
-          }}
-        ></div>
-        
-        {/* Enhanced Grid Pattern with Animation */}
-        <div className="absolute inset-0 opacity-[0.03]">
-          <div className="w-full h-full animate-pulse" style={{
-            backgroundImage: `radial-gradient(circle at 1px 1px, white 1px, transparent 0)`,
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.04]">
+          <div className="w-full h-full" style={{
+            backgroundImage: `radial-gradient(circle at 1px 1px, hsl(248 95% 70% / 0.3) 1px, transparent 0)`,
             backgroundSize: '40px 40px',
-            animationDuration: '4s'
           }}></div>
-        </div>
-
-        {/* Floating Code Snippets Effect */}
-        <div className="absolute top-1/4 right-1/4 opacity-20 text-white/50 font-mono text-xs animate-pulse">
-          &lt;code/&gt;
-        </div>
-        <div className="absolute bottom-1/4 left-1/3 opacity-20 text-white/50 font-mono text-xs animate-pulse" style={{ animationDelay: '1s' }}>
-          {`{ design: 'modern' }`}
         </div>
       </div>
       
@@ -219,11 +222,11 @@ const HeroSection = () => {
             {/* Time & Location Badge */}
             <div className={`mb-6 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               <div className="flex items-center justify-center lg:justify-start gap-4 mb-4">
-                <Badge className="bg-primary/10 backdrop-blur-sm text-foreground border-primary/20 hover:bg-primary/20 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
+                <Badge className="bg-primary/15 backdrop-blur-sm text-foreground border-primary/30 hover:bg-primary/25 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
                   <Coffee className="w-3 h-3 mr-1.5" />
                   Ujire, India • {currentTime}
                 </Badge>
-                <Badge className="bg-secondary/10 backdrop-blur-sm text-foreground border-secondary/20 hover:bg-secondary/20 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
+                <Badge className="bg-secondary/15 backdrop-blur-sm text-foreground border-secondary/30 hover:bg-secondary/25 transition-all duration-300 px-3 py-1.5 text-xs font-medium">
                   <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
                   Available for work
                 </Badge>
@@ -259,7 +262,7 @@ const HeroSection = () => {
                   </span>
                   {' '}Web Developer &
                 </span>
-                <span className="block text-3xl md:text-5xl lg:text-6xl bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent font-light">
+                <span className="block text-3xl md:text-5xl lg:text-6xl bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent font-light">
                   UI/UX Designer
                 </span>
               </h1>
@@ -278,7 +281,7 @@ const HeroSection = () => {
                   {skills.map((skill, index) => (
                     <div 
                       key={skill.label}
-                      className={`group flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 backdrop-blur-sm border border-primary/20 text-foreground text-sm font-medium hover:bg-primary/10 hover:scale-105 transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                      className={`group flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 backdrop-blur-sm border border-primary/20 text-foreground text-sm font-medium hover:bg-muted hover:scale-105 transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                       style={{ transitionDelay: `${600 + index * 100}ms` }}
                     >
                         <div className={`p-1 rounded-full bg-gradient-to-r ${skill.color} group-hover:scale-110 transition-transform duration-300`}>
@@ -294,7 +297,7 @@ const HeroSection = () => {
                   {techStack.map((tech, index) => (
                     <span 
                       key={tech}
-                      className={`px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-foreground/60 text-xs font-medium hover:bg-primary/10 hover:text-foreground/80 transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                      className={`px-3 py-1 rounded-full bg-muted/40 border border-primary/10 text-muted-foreground text-xs font-medium hover:bg-muted/60 hover:text-foreground transition-all duration-300 cursor-default ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                       style={{ transitionDelay: `${800 + index * 50}ms` }}
                     >
                       {tech}
@@ -373,7 +376,7 @@ Shreyas Gowda
             <div className={`grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0 transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
               {achievements.map((stat, index) => (
                 <div key={stat.label} className="group relative">
-                  <div className="bg-primary/5 backdrop-blur-md rounded-2xl border border-primary/20 p-4 text-center hover:bg-primary/10 hover:border-primary/30 hover:scale-105 transition-all duration-300 cursor-default relative overflow-hidden">
+                  <div className="bg-muted/80 backdrop-blur-md rounded-2xl border border-primary/20 p-4 text-center hover:bg-muted hover:border-primary/40 hover:scale-105 transition-all duration-300 cursor-default relative overflow-hidden animate-pulse-glow-3d">
                     {/* Shine effect */}
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-primary/10 to-transparent"></div>
                     
@@ -407,8 +410,8 @@ Shreyas Gowda
               {/* Main Profile Container */}
               <div className="relative w-80 h-80 lg:w-96 lg:h-96">
                 {/* Profile Image with Modern Border */}
-                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white/30 shadow-2xl backdrop-blur-sm">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+                <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl shadow-primary/20 backdrop-blur-sm animate-pulse-glow-3d">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent"></div>
                   <img 
                     src={shreyasProfile} 
                     alt="Shreyas - Web Developer & UI/UX Designer"
@@ -419,7 +422,7 @@ Shreyas Gowda
                 </div>
                 
                 {/* Floating Status Card */}
-                <div className="absolute -top-6 -left-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 border border-primary/20 shadow-xl hover:bg-white transition-all duration-300 cursor-default">
+                <div className="absolute -top-6 -left-6 bg-card/90 backdrop-blur-md rounded-2xl p-4 border border-primary/30 shadow-xl shadow-primary/10 hover:bg-card transition-all duration-300 cursor-default animate-float3d">
                   <div className="flex items-center gap-3">
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
                     <div className="text-foreground font-medium text-sm">Available</div>
@@ -427,7 +430,7 @@ Shreyas Gowda
                 </div>
                 
                 {/* Experience Badge */}
-                <div className="group absolute -top-4 -right-8 bg-white/95 backdrop-blur-xl rounded-3xl p-5 border border-primary/30 shadow-2xl hover:shadow-[0_20px_60px_-10px_rgba(99,102,241,0.3)] hover:scale-110 hover:rotate-3 transition-all duration-500 cursor-default overflow-hidden">
+                <div className="group absolute -top-4 -right-8 bg-card/95 backdrop-blur-xl rounded-3xl p-5 border border-primary/30 shadow-2xl shadow-primary/20 hover:shadow-[0_20px_60px_-10px_rgba(99,102,241,0.4)] hover:scale-110 hover:rotate-3 transition-all duration-500 cursor-default overflow-hidden animate-tilt3d">
                   {/* Animated gradient background */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-400/20 via-blue-500/20 to-purple-600/20 opacity-80 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent group-hover:from-primary/10 transition-all duration-500"></div>
@@ -443,14 +446,14 @@ Shreyas Gowda
                 </div>
                 
                 {/* Skills Orbit */}
-                <div className="absolute -bottom-8 -left-8 bg-white/95 backdrop-blur-md rounded-2xl p-3 border border-primary/20 shadow-xl hover:bg-white transition-all duration-300 cursor-default">
+                <div className="absolute -bottom-8 -left-8 bg-card/95 backdrop-blur-md rounded-2xl p-3 border border-primary/20 shadow-xl shadow-primary/10 hover:bg-card transition-all duration-300 cursor-default animate-float3d" style={{ animationDelay: '1s' }}>
                   <div className="flex items-center gap-2">
                     <Code className="h-4 w-4 text-primary" />
                     <span className="text-foreground text-sm font-medium">Developer</span>
                   </div>
                 </div>
                 
-                <div className="absolute -bottom-4 -right-12 bg-white/95 backdrop-blur-md rounded-2xl p-3 border border-secondary/20 shadow-xl hover:bg-white transition-all duration-300 cursor-default">
+                <div className="absolute -bottom-4 -right-12 bg-card/95 backdrop-blur-md rounded-2xl p-3 border border-secondary/30 shadow-xl shadow-secondary/10 hover:bg-card transition-all duration-300 cursor-default animate-float3d" style={{ animationDelay: '2s' }}>
                   <div className="flex items-center gap-2">
                     <Palette className="h-4 w-4 text-secondary" />
                     <span className="text-foreground text-sm font-medium">Designer</span>

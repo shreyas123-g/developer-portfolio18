@@ -37,7 +37,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-muted/50 border-t border-border">
+    <footer className="bg-muted/30 border-t border-border">
       <div className="container mx-auto px-6 py-12">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand & Description */}
@@ -89,7 +89,7 @@ const Footer = () => {
                 <a
                   key={index}
                   href={social.href}
-                  className="p-2 bg-background rounded-lg hover:bg-hero-gradient hover:text-white transition-all duration-300 hover:shadow-glow"
+                  className="p-2 bg-muted rounded-lg hover:bg-hero-gradient hover:text-foreground transition-all duration-300 hover:shadow-glow"
                   aria-label={social.label}
                 >
                   <social.icon className="h-5 w-5" />
