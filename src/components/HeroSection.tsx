@@ -262,7 +262,7 @@ const HeroSection = () => {
                   </span>
                   {' '}Web Developer &
                 </span>
-                <span className="block text-3xl md:text-5xl lg:text-6xl bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent font-light">
+                <span className="block text-3xl md:text-5xl lg:text-6xl bg-gradient-to-r from-secondary via-primary to-accent bg-clip-text text-transparent font-light">
                   UI/UX Designer
                 </span>
               </h1>
