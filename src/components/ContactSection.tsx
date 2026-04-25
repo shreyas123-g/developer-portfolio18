@@ -53,30 +53,16 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Initialize EmailJS
-      emailjs.init("Q7HffJR7NHEG5Qnho");
-
-      const templateParams = {
-        from_first_name: formData.firstName,
-        from_last_name: formData.lastName,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: "Shreyas",
-      };
-
-      await emailjs.send(
-        "service_769btpq",
-        "template_ndtr6nn",
-        templateParams
-      );
+      const recipient = "gowdashreyas136@gmail.com";
+      const body = `Name: ${formData.firstName} ${formData.lastName}\r\nEmail: ${formData.email}\r\n\r\n${formData.message}`;
+      const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
 
       toast({
-        title: "Message Sent!",
-        description: "Thank you for your message. I'll get back to you soon!",
+        title: "Opening Email Client",
+        description: "Your default email app is opening to send the message to gowdashreyas136@gmail.com.",
       });
 
-      // Reset form
       setFormData({
         firstName: '',
         lastName: '',
@@ -84,12 +70,11 @@ const ContactSection = () => {
         subject: '',
         message: ''
       });
-
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Mailto Error:', error);
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again or contact me directly via email.",
+        description: "Could not open email client. Please email gowdashreyas136@gmail.com directly.",
         variant: "destructive",
       });
     } finally {
@@ -125,7 +110,7 @@ const ContactSection = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/shreyas-0b8129333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      href: "https://www.linkedin.com/in/shreyas-com",
       color: "hover:text-blue-600",
     },
     {
@@ -137,7 +122,7 @@ const ContactSection = () => {
     {
       icon: Instagram,
       label: "Instagram",
-      href: "https://www.instagram.com/_shreyas.__7/?utm_source=qr&igsh=OXg0MjViaTNrMGE4#",
+      href: "https://www.instagram.com/_shreyas__.7/",
       color: "hover:text-pink-600",
     },
   ];
