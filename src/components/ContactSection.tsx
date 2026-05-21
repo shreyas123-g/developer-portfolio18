@@ -200,7 +200,6 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       placeholder="Your first name" 
                       className="border-2 focus:border-primary transition-colors"
-                      disabled={isSubmitting}
                       required
                     />
                   </div>
@@ -214,7 +213,6 @@ const ContactSection = () => {
                       onChange={handleInputChange}
                       placeholder="Your last name" 
                       className="border-2 focus:border-primary transition-colors"
-                      disabled={isSubmitting}
                       required
                     />
                   </div>
@@ -231,7 +229,6 @@ const ContactSection = () => {
                     onChange={handleInputChange}
                     placeholder="your.email@example.com" 
                     className="border-2 focus:border-primary transition-colors"
-                    disabled={isSubmitting}
                     required
                   />
                 </div>
@@ -246,7 +243,6 @@ const ContactSection = () => {
                     onChange={handleInputChange}
                     placeholder="What's this about?" 
                     className="border-2 focus:border-primary transition-colors"
-                    disabled={isSubmitting}
                     required
                   />
                 </div>
