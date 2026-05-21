@@ -3,12 +3,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
-import { Phone, Mail, MapPin, Linkedin, Github, Instagram, Send, Loader2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Linkedin, Github, Instagram, Send } from 'lucide-react';
 import { useState } from 'react';
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -49,53 +48,20 @@ const ContactSection = () => {
       return;
     }
 
-    setIsSubmitting(true);
+    const emailBody = [
+      `Name: ${formData.firstName} ${formData.lastName}`,
+      `Email: ${formData.email}`,
+      '',
+      formData.message,
+    ].join('\n');
 
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/gowdashreyas136@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        },
-        body: JSON.stringify({
-          name: `${formData.firstName} ${formData.lastName}`,
-          email: formData.email,
-          _subject: formData.subject,
-          _replyto: formData.email,
-          _template: 'table',
-          _captcha: 'false',
-          message: formData.message,
-        }),
-      });
+    const mailtoLink = `mailto:gowdashreyas136@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
+    window.location.href = mailtoLink;
 
-      const data = await response.json();
-      if (!response.ok || data.success === 'false') {
-        throw new Error(data.message || 'Failed to send');
-      }
-
-      toast({
-        title: "Message Sent!",
-        description: "Thanks for reaching out. I'll get back to you soon.",
-      });
-
-      setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-    } catch (error) {
-      console.error('Form submission error:', error);
-      toast({
-        title: "Failed to Send",
-        description: "Something went wrong. Please email gowdashreyas136@gmail.com directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
+    toast({
+      title: "Email Ready",
+      description: "Your email app opened with the message filled in for gowdashreyas136@gmail.com.",
+    });
   };
 
   const contactInfo = [
