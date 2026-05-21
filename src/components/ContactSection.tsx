@@ -4,7 +4,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Phone, Mail, MapPin, Linkedin, Github, Instagram, Send, Loader2 } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 import { useState } from 'react';
 
 const ContactSection = () => {
