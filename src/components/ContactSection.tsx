@@ -258,7 +258,6 @@ const ContactSection = () => {
                     placeholder="Tell me about your project..." 
                     rows={5}
                     className="border-2 focus:border-primary transition-colors resize-none"
-                    disabled={isSubmitting}
                     required
                   />
                 </div>
@@ -267,19 +266,9 @@ const ContactSection = () => {
                   type="submit" 
                   className="w-full bg-hero-gradient hover:shadow-glow-lg transition-all duration-300 font-semibold py-3"
                   size="lg"
-                  disabled={isSubmitting}
                 >
-                  {isSubmitting ? (
-                    <>
-                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      Sending...
-                    </>
-                  ) : (
-                    <>
-                      <Send className="mr-2 h-5 w-5" />
-                      Send Message
-                    </>
-                  )}
+                  <Send className="mr-2 h-5 w-5" />
+                  Send Message
                 </Button>
               </form>
             </CardContent>
