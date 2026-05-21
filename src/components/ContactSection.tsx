@@ -52,19 +52,27 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      await emailjs.send(
-        'service_769btpq',
-        'template_ndtr6nn',
-        {
-          from_name: `${formData.firstName} ${formData.lastName}`,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: 'gowdashreyas136@gmail.com',
-          reply_to: formData.email,
+      const response = await fetch('https://formsubmit.co/ajax/gowdashreyas136@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        'Q7HffJR7NHEG5Qnho'
-      );
+        body: JSON.stringify({
+          name: `${formData.firstName} ${formData.lastName}`,
+          email: formData.email,
+          _subject: formData.subject,
+          _replyto: formData.email,
+          _template: 'table',
+          _captcha: 'false',
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok || data.success === 'false') {
+        throw new Error(data.message || 'Failed to send');
+      }
 
       toast({
         title: "Message Sent!",
@@ -79,7 +87,7 @@ const ContactSection = () => {
         message: ''
       });
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error('Form submission error:', error);
       toast({
         title: "Failed to Send",
         description: "Something went wrong. Please email gowdashreyas136@gmail.com directly.",
