@@ -10,9 +10,19 @@ import aiResumeBuilder from '@/assets/ai-resume-builder.jpg';
 import cinemateBooking from '@/assets/cinemate-booking.jpg';
 import weatherApp from '@/assets/weather-app.jpg';
 import netflixTvgo from '@/assets/netflix-tvgo.jpg';
+import pizzaWebsiteFigma from '@/assets/pizza-website-figma.jpg';
 
 const PortfolioSection = () => {
   const projects = [
+    {
+      title: "Pizza Website - Figma Design",
+      description: "A modern and appetizing pizza restaurant website designed in Figma, featuring a bold dark hero section, interactive menu cards, smooth ordering flow, and a clean visual hierarchy. Crafted with strong UI/UX principles including consistent design system, accessible typography, and engaging micro-interactions for a delightful customer experience.",
+      image: pizzaWebsiteFigma,
+      technologies: ["Figma", "UI/UX Design", "Prototyping", "Design System", "Wireframing"],
+      liveUrl: "https://www.figma.com/proto/HtiEaxzqk9FSuUIX85gxNG/Untitled?node-id=1-2&p=f&t=GZzHBVZKXIvYKlHd-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=20%3A110",
+      githubUrl: "https://www.figma.com/design/HtiEaxzqk9FSuUIX85gxNG/Untitled?node-id=0-1&p=f&t=Ewu3IxsG5RuKcZIr-0",
+      featured: true,
+    },
     {
       title: "Cinema TVGo - Streaming Platform",
       description: "An AI-powered Netflix-style streaming platform that delivers personalized movie and TV show recommendations using machine learning algorithms. Features intelligent content curation, trending analytics, user preference learning, watchlist management, and a sleek dark-themed UI for an immersive viewing experience.",
