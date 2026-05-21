@@ -53,14 +53,23 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      const recipient = "gowdashreyas136@gmail.com";
-      const body = `Name: ${formData.firstName} ${formData.lastName}\r\nEmail: ${formData.email}\r\n\r\n${formData.message}`;
-      const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailtoLink;
+      await emailjs.send(
+        'service_769btpq',
+        'template_ndtr6nn',
+        {
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: 'gowdashreyas136@gmail.com',
+          reply_to: formData.email,
+        },
+        'Q7HffJR7NHEG5Qnho'
+      );
 
       toast({
-        title: "Opening Email Client",
-        description: "Your default email app is opening to send the message to gowdashreyas136@gmail.com.",
+        title: "Message Sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
       });
 
       setFormData({
@@ -71,10 +80,10 @@ const ContactSection = () => {
         message: ''
       });
     } catch (error) {
-      console.error('Mailto Error:', error);
+      console.error('EmailJS Error:', error);
       toast({
-        title: "Error",
-        description: "Could not open email client. Please email gowdashreyas136@gmail.com directly.",
+        title: "Failed to Send",
+        description: "Something went wrong. Please email gowdashreyas136@gmail.com directly.",
         variant: "destructive",
       });
     } finally {
