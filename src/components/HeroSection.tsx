@@ -324,42 +324,30 @@ const HeroSection = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Button>
               
-              <Button 
+              <Button
                 variant="outline"
                 size="lg"
                 className="group border-2 border-blue-500/70 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-500 font-semibold px-8 py-4 rounded-2xl backdrop-blur-sm btn-modern"
-                onClick={() => {
-                  const cvContent = `Application for Web Developer / Internship Opportunity
-
-Dear Mam/Sir,
-
-I hope this message finds you well! I'm excited to reach out and share my enthusiasm for the opportunity to join your team at The Web People. I've been following your work and am genuinely impressed by your innovative and user-centered approach to web design and development.
-
-As a dedicated Full Stack Web Developer, I bring hands-on experience with HTML, CSS, JavaScript, Python, Java, UI/UX Design, Figma, and Data Analytics. I'm a fast learner who easily adapts to new tools and technologies, and I thrive in high-pressure environments.
-
-I'm really looking forward to the chance to learn, collaborate, and grow under your mentorship while contributing to impactful projects. If there are any internship or entry-level positions available on your team, I would greatly appreciate your guidance.
-
-Thank you for considering my application. I can't wait to hear from you soon!
-
-Warm regards,
-Shreyas Gowda
-📧 gowdashreyas136@gmail.com
-🌐 shreyas-portfolio-website - Lovable`;
-                  
-                  const blob = new Blob([cvContent], { type: 'text/plain' });
-                  const url = URL.createObjectURL(blob);
-                  const a = document.createElement('a');
-                  a.href = url;
-                  a.download = 'Shreyas_Gowda_CV.txt';
-                  document.body.appendChild(a);
-                  a.click();
-                  document.body.removeChild(a);
-                  URL.revokeObjectURL(url);
-                }}
+                asChild
               >
-                <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                Download CV
-                <Sparkles className="ml-2 h-4 w-4 opacity-60 group-hover:opacity-100 group-hover:rotate-12 transition-all duration-300" />
+                <a href={resumeAsset.url} download="Shreyas_Gowda_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                  Resume
+                  <Sparkles className="ml-2 h-4 w-4 opacity-60 group-hover:opacity-100 group-hover:rotate-12 transition-all duration-300" />
+                </a>
+              </Button>
+
+              <Button
+                variant="outline"
+                size="lg"
+                className="group border-2 border-purple-500/70 text-purple-400 hover:bg-purple-500/10 hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 font-semibold px-8 py-4 rounded-2xl backdrop-blur-sm btn-modern"
+                asChild
+              >
+                <a href={coverLetterAsset.url} download="Shreyas_Gowda_CoverLetter.pdf" target="_blank" rel="noopener noreferrer">
+                  <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
+                  Cover Letter
+                  <Sparkles className="ml-2 h-4 w-4 opacity-60 group-hover:opacity-100 group-hover:rotate-12 transition-all duration-300" />
+                </a>
               </Button>
               
               {/* New Contact Button */}
