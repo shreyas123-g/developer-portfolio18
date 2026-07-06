@@ -3,6 +3,8 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowDown, Download, Sparkles, Code, Palette, Globe, Star, Zap, Play, Coffee, Lightbulb, Heart, Rocket, Target, Users, Award, TrendingUp } from 'lucide-react';
 import { useEffect, useState, useCallback } from 'react';
 import shreyasProfile from '@/assets/shreyas-hero-circle.jpg';
+import resumeAsset from '@/assets/resume.pdf.asset.json';
+import coverLetterAsset from '@/assets/cover-letter.pdf.asset.json';
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
