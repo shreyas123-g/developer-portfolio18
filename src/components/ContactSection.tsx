@@ -11,8 +11,7 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
-    email: '',
-    subject: '',
+    phone: '',
     message: ''
   });
 
@@ -24,11 +23,10 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.subject || !formData.message) {
+
+    if (!formData.firstName || !formData.lastName || !formData.phone || !formData.message) {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
@@ -37,31 +35,33 @@ const ContactSection = () => {
       return;
     }
 
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
+    const phoneRegex = /^[0-9+\-\s()]{7,}$/;
+    if (!phoneRegex.test(formData.phone)) {
       toast({
-        title: "Invalid Email",
-        description: "Please enter a valid email address.",
+        title: "Invalid Phone",
+        description: "Please enter a valid phone number.",
         variant: "destructive",
       });
       return;
     }
 
-    const emailBody = [
+    const waText = [
       `Name: ${formData.firstName} ${formData.lastName}`,
-      `Email: ${formData.email}`,
+      `Phone: ${formData.phone}`,
       '',
       formData.message,
     ].join('\n');
 
-    const mailtoLink = `mailto:gowdashreyas136@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
-    window.location.href = mailtoLink;
+    const myWhatsApp = '919686644200';
+    const waLink = `https://wa.me/${myWhatsApp}?text=${encodeURIComponent(waText)}`;
+    window.open(waLink, '_blank', 'noopener,noreferrer');
 
     toast({
-      title: "Email Ready",
-      description: "Your email app opened with the message filled in for gowdashreyas136@gmail.com.",
+      title: "Opening WhatsApp",
+      description: "Tap send in WhatsApp to deliver your message.",
     });
+
+    setFormData({ firstName: '', lastName: '', phone: '', message: '' });
   };
 
   const contactInfo = [
@@ -220,32 +220,19 @@ const ContactSection = () => {
                 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Email *
+                    Phone Number *
                   </label>
                   <Input 
-                    name="email"
-                    type="email" 
-                    value={formData.email}
+                    name="phone"
+                    type="tel" 
+                    value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="your.email@example.com" 
+                    placeholder="+91 98xxxxxxxx" 
                     className="border-2 focus:border-primary transition-colors"
                     required
                   />
                 </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Subject *
-                  </label>
-                  <Input 
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    placeholder="What's this about?" 
-                    className="border-2 focus:border-primary transition-colors"
-                    required
-                  />
-                </div>
+
                 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
