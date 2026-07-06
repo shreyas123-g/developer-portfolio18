@@ -220,32 +220,19 @@ const ContactSection = () => {
                 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
-                    Email *
+                    Phone Number *
                   </label>
                   <Input 
-                    name="email"
-                    type="email" 
-                    value={formData.email}
+                    name="phone"
+                    type="tel" 
+                    value={formData.phone}
                     onChange={handleInputChange}
-                    placeholder="your.email@example.com" 
+                    placeholder="+91 98xxxxxxxx" 
                     className="border-2 focus:border-primary transition-colors"
                     required
                   />
                 </div>
-                
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Subject *
-                  </label>
-                  <Input 
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    placeholder="What's this about?" 
-                    className="border-2 focus:border-primary transition-colors"
-                    required
-                  />
-                </div>
+
                 
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-2">
