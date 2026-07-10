@@ -1,6 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, User, Calendar } from 'lucide-react';
-import sdmLogo from '@/assets/sdm-logo.png.asset.json';
 
 const AboutSection = () => {
   const education = [
