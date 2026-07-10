@@ -14,6 +14,7 @@ const Portfolio = () => {
       <main>
         <HeroSection />
         <AboutSection />
+        <ExperienceSection />
         <PortfolioSection />
         <SkillsSection />
         <ContactSection />
