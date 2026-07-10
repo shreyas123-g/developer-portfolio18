@@ -12,10 +12,10 @@ const SkillsSection = () => {
       color: "from-primary to-primary-glow",
     },
     {
-      title: "Full Stack Developer",
+      title: "Programming & Development",
       icon: Code,
-      description: "Creating and developing digital solutions across platforms",
-      skills: ["JavaScript", "Node.js", "MongoDB", "HTML and CSS", "React.js", "Express.js"],
+      description: "Proficient in multiple programming languages and development tools",
+      skills: ["Java", "JavaScript", "HTML", "CSS", "SQL", "Git", "Core Java", "React JS"],
       color: "from-secondary to-accent",
     },
     {

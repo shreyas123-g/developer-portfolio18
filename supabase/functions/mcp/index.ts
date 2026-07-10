@@ -66,7 +66,7 @@ var list_projects_default = defineTool2({
 import { defineTool as defineTool3 } from "npm:@lovable.dev/mcp-js@0.20.0";
 var SKILLS = {
   "UI/UX Design": ["Figma", "Graphic Design", "App Design", "Web Design", "Design Systems"],
-  "Full Stack Developer": ["JavaScript", "Node.js", "MongoDB", "HTML/CSS", "React.js", "Express.js"],
+  "Programming & Development": ["Java", "JavaScript", "HTML", "CSS", "SQL", "Git", "Core Java", "React JS"],
   "Editing": ["Lightroom", "Picsart", "Snapseed", "Photo Editing", "Color Correction"],
   "Other": ["Football", "Volleyball", "Communication", "GitHub", "Teamwork"]
 };
