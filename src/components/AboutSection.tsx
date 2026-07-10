@@ -81,9 +81,12 @@ const AboutSection = () => {
 
           {/* Right side - Education */}
           <div className="space-y-6">
-            <h3 className="font-display font-semibold text-2xl mb-8 text-foreground">
-              Educational Background
-            </h3>
+            <div className="flex items-center gap-4 mb-2">
+              <img src="/sdm-logo.png" alt="SDM Institute of Technology" className="w-16 h-16 object-contain" />
+              <h3 className="font-display font-semibold text-2xl text-foreground">
+                Educational Background
+              </h3>
+            </div>
             
             <div className="space-y-6">
               {education.map((edu, index) => (
