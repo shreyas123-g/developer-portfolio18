@@ -82,7 +82,7 @@ const AboutSection = () => {
           {/* Right side - Education */}
           <div className="space-y-6">
             <div className="flex items-center gap-4 mb-2">
-              <img src={sdmLogo.url} alt="SDM Institute of Technology" className="w-16 h-16 object-contain" />
+              <img src="/sdm-logo.png" alt="SDM Institute of Technology" className="w-16 h-16 object-contain" />
               <h3 className="font-display font-semibold text-2xl text-foreground">
                 Educational Background
               </h3>
