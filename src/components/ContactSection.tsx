@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { Phone, Mail, MapPin, Linkedin, Github, Instagram, Send, Loader2, CheckCircle2 } from 'lucide-react';
-import emailjs from '@emailjs/browser';
+import { supabase } from '@/integrations/supabase/client';
 import { z } from 'zod';
 
 const MAX_MSG = 500;
@@ -53,44 +53,19 @@ const ContactSection = () => {
       return;
     }
 
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-    if (!serviceId || !templateId || !publicKey) {
-      toast({
-        title: 'Email not configured',
-        description:
-          'EmailJS keys are missing. Add VITE_EMAILJS_SERVICE_ID, VITE_EMAILJS_TEMPLATE_ID, and VITE_EMAILJS_PUBLIC_KEY to your .env file.',
-        variant: 'destructive',
-      });
-      return;
-    }
-
     setIsSending(true);
     try {
-      const sentAt = new Date().toLocaleString('en-IN', {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-        hour: 'numeric',
-        minute: '2-digit',
-        hour12: true,
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: result.data.name,
+          email: result.data.email,
+          message: result.data.message,
+        },
       });
 
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: result.data.name,
-          from_email: result.data.email,
-          reply_to: result.data.email,
-          message: result.data.message,
-          sent_at: sentAt,
-          subject: `New Portfolio Contact from ${result.data.name}`,
-        },
-        { publicKey },
-      );
+      if (error || (data && (data as any).error)) {
+        throw new Error(error?.message || (data as any)?.error || 'Send failed');
+      }
 
       toast({
         title: '✅ Message sent',
@@ -101,7 +76,7 @@ const ContactSection = () => {
       setJustSent(true);
       setTimeout(() => setJustSent(false), 2500);
     } catch (err) {
-      console.error('EmailJS error:', err);
+      console.error('Contact send error:', err);
       toast({
         title: '❌ Something went wrong',
         description: 'Please try again later.',
