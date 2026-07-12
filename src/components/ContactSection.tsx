@@ -55,16 +55,23 @@ const ContactSection = () => {
 
     setIsSending(true);
     try {
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
+      const response = await fetch('https://formspree.io/f/mjgnbakd', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
           name: result.data.name,
           email: result.data.email,
           message: result.data.message,
-        },
+          _subject: `New Portfolio Contact from ${result.data.name}`,
+        }),
       });
 
-      if (error || (data && (data as any).error)) {
-        throw new Error(error?.message || (data as any)?.error || 'Send failed');
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData?.error || 'Send failed');
       }
 
       toast({
