@@ -59,11 +59,14 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`font-medium transition-colors hover:text-primary ${
+                className={`relative font-medium transition-colors hover:text-primary ${
                   activeSection === item.id ? 'text-primary' : 'text-muted-foreground'
                 }`}
               >
                 {item.label}
+                {activeSection === item.id && (
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
+                )}
               </button>
             ))}
           </div>
