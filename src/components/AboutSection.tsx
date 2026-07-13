@@ -5,10 +5,10 @@ import sahyadriLogo from '@/assets/sahyadri-logo.png.asset.json';
 const AboutSection = () => {
   const education = [
     {
-      institution: "SDM Institute of Technology, Ujire",
+      institution: "Sahyadri Institute of Technology & Management, Mangaluru",
       degree: "Engineering",
       period: "Aug 2022 – Present",
-      icon: GraduationCap,
+      image: sahyadriLogo.url,
     },
     {
       institution: "SDM PU College, Ujire",
