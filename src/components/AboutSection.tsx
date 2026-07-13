@@ -1,5 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, User, Calendar } from 'lucide-react';
+import sahyadriLogo from '@/assets/sahyadri-logo.png.asset.json';
 
 const AboutSection = () => {
   const education = [
