@@ -50,9 +50,6 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="font-display font-bold text-2xl bg-text-gradient bg-clip-text text-transparent">
-            Shreyas
-          </div>
           
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
