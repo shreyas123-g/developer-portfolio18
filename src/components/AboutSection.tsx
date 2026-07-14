@@ -88,11 +88,7 @@ const AboutSection = () => {
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-4">
                       <div className="p-2 bg-hero-gradient rounded-lg group-hover:shadow-glow transition-all duration-300 flex items-center justify-center w-12 h-12 shrink-0">
-                        {edu.image ? (
-                          <img src={edu.image} alt={edu.institution} className="h-8 w-8 object-contain" />
-                        ) : (
-                          <edu.icon className="h-6 w-6 text-white" />
-                        )}
+                        <edu.icon className="h-6 w-6 text-white" />
                       </div>
                       <div className="flex-1">
                         <h4 className="font-semibold text-lg text-foreground mb-1">
