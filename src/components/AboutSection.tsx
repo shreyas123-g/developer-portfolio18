@@ -4,7 +4,7 @@ import { GraduationCap, User, Calendar } from 'lucide-react';
 const AboutSection = () => {
   const education = [
     {
-      institution: "Sahyadri Institute of Technology & Management, Mangaluru",
+      institution: "SDM Institution of Technology Ujire",
       degree: "Engineering",
       period: "Aug 2022 – Present",
       icon: GraduationCap,
