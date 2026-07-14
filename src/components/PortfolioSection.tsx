@@ -96,6 +96,15 @@ const PortfolioSection = () => {
       featured: true,
     },
     {
+      title: "My Portfolio Website",
+      description: "A personal portfolio website built to showcase projects, skills, and professional experience. Features a modern dark-themed UI, responsive design, smooth animations, and an integrated contact form.",
+      image: null,
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "UI/UX Design"],
+      liveUrl: "https://github.com/shreyas123-g/my-portfolio.git",
+      githubUrl: "https://github.com/shreyas123-g/my-portfolio.git",
+      featured: true,
+    },
+    {
       title: "Interactive Rock Paper Scissors Game",
       description: "A fully interactive Rock Paper Scissors game with dynamic UI updates, score tracking, and responsive design. Features smooth animations and localStorage for game persistence.",
       image: null,
