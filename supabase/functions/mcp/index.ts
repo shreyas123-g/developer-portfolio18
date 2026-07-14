@@ -3,7 +3,7 @@
 // supabase function: mcp
 // Bundled from src/lib/mcp/index.ts by @lovable.dev/mcp-js.
 // src/lib/mcp/index.ts
-import { defineMcp } from "npm:@lovable.dev/mcp-js@0.20.0";
+import { auth, defineMcp } from "npm:@lovable.dev/mcp-js@0.20.0";
 
 // src/lib/mcp/tools/get-profile.ts
 import { defineTool } from "npm:@lovable.dev/mcp-js@0.20.0";
@@ -84,12 +84,18 @@ var list_skills_default = defineTool3({
 });
 
 // src/lib/mcp/index.ts
+var supabaseUrl = "https://svzejjuxwicmluzdurfl.supabase.co";
 var mcp_default = defineMcp({
   name: "shreyas-portfolio-mcp",
   title: "Shreyas Portfolio MCP",
   version: "0.1.0",
   instructions: "Tools for exploring Shreyas Gowda's portfolio: profile/contact, projects, and skills.",
-  tools: [get_profile_default, list_projects_default, list_skills_default]
+  tools: [get_profile_default, list_projects_default, list_skills_default],
+  auth: auth.oauth.issuer({
+    issuer: `${supabaseUrl}/auth/v1`,
+    acceptedAudiences: "authenticated",
+    jwksUri: `${supabaseUrl}/auth/v1/.well-known/jwks.json`
+  })
 });
 
 // lovable-mcp-supabase-entry.ts
