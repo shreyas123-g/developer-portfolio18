@@ -10,6 +10,7 @@ const PROJECTS = [
   { title: "Job Tracker Application", tech: ["Java", "AI/ML"], url: "https://github.com/shreyas123-g/job-tracker" },
   { title: "Car Price Prediction", tech: ["Java", "MongoDB"], url: "https://github.com/shreyas123-g/car-prize-prediction" },
   { title: "Secure Wallet", tech: ["Java", "MongoDB"], url: "https://github.com/shreyas123-g/main-project-of-coin" },
+  { title: "My Portfolio Website", tech: ["React", "TypeScript", "Tailwind CSS"], url: "https://github.com/shreyas123-g/my-portfolio.git" },
 ];
 
 export default defineTool({
