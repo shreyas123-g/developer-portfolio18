@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Github } from 'lucide-react';
+import { Github } from 'lucide-react';
 import secureWallet from '@/assets/secure-wallet.jpg';
 import carPricePrediction from '@/assets/car-price-prediction.jpg';
 import jobTracker from '@/assets/job-tracker.jpg';
@@ -179,15 +179,6 @@ const PortfolioSection = () => {
                   <div className="absolute inset-0 bg-hero-gradient opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center space-x-4">
                     <Button 
                       size="sm" 
-                      variant="secondary"
-                      className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
-                      onClick={() => window.open(project.liveUrl, '_blank')}
-                    >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
-                    </Button>
-                    <Button 
-                      size="sm" 
                       variant="outline"
                       className="border-white text-white hover:bg-white hover:text-primary transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
                       onClick={() => window.open(project.githubUrl, '_blank')}
@@ -247,15 +238,6 @@ const PortfolioSection = () => {
                     </div>
                     
                     <div className="flex space-x-3">
-                      <Button 
-                        size="sm" 
-                        variant="ghost" 
-                        className="p-0 h-auto text-primary hover:text-primary-glow"
-                        onClick={() => window.open("https://www.figma.com/proto/t2gHjya4Nli7qePuBnBRpc/SHREYAS-PROJECT-1-UI-UX?page-id=26%3A226&node-id=30-546&starting-point-node-id=30%3A546&t=TT69s7rzq7difduk-1", '_blank')}
-                      >
-                        <ExternalLink className="h-4 w-4 mr-1" />
-                        Demo
-                      </Button>
                       <Button 
                         size="sm" 
                         variant="ghost" 
