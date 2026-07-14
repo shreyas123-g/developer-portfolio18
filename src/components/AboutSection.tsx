@@ -6,7 +6,7 @@ const AboutSection = () => {
     {
       institution: "SDM Institution of Technology Ujire",
       degree: "Engineering",
-      period: "Aug 2022 – Present",
+      period: "Aug 2022 – May 2026",
       icon: GraduationCap,
     },
     {
