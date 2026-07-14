@@ -1,6 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { GraduationCap, User, Calendar } from 'lucide-react';
-import sahyadriLogo from '@/assets/sahyadri-logo.png.asset.json';
 
 const AboutSection = () => {
   const education = [
@@ -8,7 +7,7 @@ const AboutSection = () => {
       institution: "Sahyadri Institute of Technology & Management, Mangaluru",
       degree: "Engineering",
       period: "Aug 2022 – Present",
-      image: sahyadriLogo.url,
+      icon: GraduationCap,
     },
     {
       institution: "SDM PU College, Ujire",
