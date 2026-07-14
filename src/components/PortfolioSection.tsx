@@ -181,21 +181,10 @@ const PortfolioSection = () => {
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
-                    <div className="w-full h-48 bg-hero-secondary flex items-center justify-center">
-                      <div className="text-white font-semibold text-lg">Coming Soon</div>
+                    <div className="w-full h-48 bg-white flex items-center justify-center">
+                      <div className="text-foreground font-semibold text-lg">Coming Soon</div>
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-hero-gradient opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                    <Button 
-                      size="sm" 
-                      variant="outline"
-                      className="border-white text-white hover:bg-white hover:text-primary transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
-                      onClick={() => window.open(project.githubUrl, '_blank')}
-                    >
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </Button>
-                  </div>
                 </div>
                 
                 <CardHeader className="pb-4">
