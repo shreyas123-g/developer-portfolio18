@@ -181,9 +181,7 @@ const PortfolioSection = () => {
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
-                    <div className="w-full h-48 bg-white flex items-center justify-center">
-                      <div className="text-foreground font-semibold text-lg">Coming Soon</div>
-                    </div>
+                    <div className="w-full h-48 bg-white"></div>
                   )}
                 </div>
                 
