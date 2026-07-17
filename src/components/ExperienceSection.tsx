@@ -2,9 +2,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Award, Calendar, ExternalLink } from 'lucide-react';
-import kodnestImg from '@/assets/kodnest-cert.jpg.asset.json';
-import mindmatrixImg from '@/assets/mindmatrix-cert.jpg.asset.json';
-import kodnestPdf from '@/assets/kodnest-cert.pdf.asset.json';
+import kodnestImg from '@/assets/kodnest-certificate.png';
+import mindmatrixImg from '@/assets/mindmatrix.certificate.png';
+import kodnestPdf from '@/assets/certificate kodnest  1.pdf';
 import mindmatrixPdf from '@/assets/mindmatrix-cert.pdf.asset.json';
 
 const experiences = [
@@ -15,8 +15,8 @@ const experiences = [
     description:
       'Completed an onsite internship focused on Java Full Stack development enriched with AI, building end-to-end applications and strengthening core engineering skills.',
     skills: ['Java', 'Spring Boot', 'SQL', 'React', 'AI Integration'],
-    image: kodnestImg.url,
-    pdf: kodnestPdf.url,
+    image: kodnestImg,
+    pdf: kodnestPdf,
   },
   {
     title: 'Android App Development using Generative AI',
@@ -25,7 +25,7 @@ const experiences = [
     description:
       'Industry-aligned internship on Android development with GenAI: Kotlin & Jetpack Compose, Android Studio, Google Cloud Labs, Google AI Studio, Firebase, UI/UX prototyping and iterative debugging.',
     skills: ['Kotlin', 'Jetpack Compose', 'Google AI Studio', 'Firebase', 'UI/UX'],
-    image: mindmatrixImg.url,
+    image: mindmatrixImg,
     pdf: mindmatrixPdf.url,
   },
 ];

@@ -1,4 +1,11 @@
-import { corsHeaders } from 'npm:@supabase/supabase-js@2/cors'
+/// <reference types="deno" />
+
+// Minimal CORS headers for Supabase Edge Function
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET,POST,OPTIONS',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+}
 
 interface ContactPayload {
   name: string
@@ -6,9 +13,9 @@ interface ContactPayload {
   message: string
 }
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
   if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders })
+    return new Response(null, { status: 204, headers: corsHeaders })
   }
 
   try {
@@ -41,7 +48,7 @@ Deno.serve(async (req) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // EmailJS requires an Origin header for non-browser requests
+        // some services check origin for CORS; set to your deployed domain in production
         'origin': 'http://localhost',
       },
       body: JSON.stringify({
