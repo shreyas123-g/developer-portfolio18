@@ -5,7 +5,6 @@ import { Award, Calendar, ExternalLink } from 'lucide-react';
 import kodnestImg from '@/assets/kodnest-certificate.png';
 import mindmatrixImg from '@/assets/mindmatrix.certificate.png';
 import kodnestPdf from '@/assets/certificate kodnest  1.pdf';
-import mindmatrixPdf from '@/assets/mindmatrix-cert.pdf.asset.json';
 
 const experiences = [
   {
@@ -26,7 +25,7 @@ const experiences = [
       'Industry-aligned internship on Android development with GenAI: Kotlin & Jetpack Compose, Android Studio, Google Cloud Labs, Google AI Studio, Firebase, UI/UX prototyping and iterative debugging.',
     skills: ['Kotlin', 'Jetpack Compose', 'Google AI Studio', 'Firebase', 'UI/UX'],
     image: mindmatrixImg,
-    pdf: mindmatrixPdf.url,
+    pdf: mindmatrixImg,
   },
 ];
 

@@ -3,8 +3,8 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowDown, Download, Sparkles, Code, Palette, Globe, Star, Zap, Play, Coffee, Lightbulb, Heart, Rocket, Target, Users, Award, TrendingUp } from 'lucide-react';
 import { useEffect, useState, useCallback } from 'react';
 import shreyasProfile from '@/assets/shreyas-hero-circle.jpg';
-import resumeAsset from '@/assets/resume.pdf.asset.json';
-import coverLetterAsset from '@/assets/cover-letter.pdf.asset.json';
+import resumeFile from '@/assets/shreyas-resume.png';
+import coverLetterFile from '@/assets/shreyas-cover-letter.png';
 
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -330,7 +330,7 @@ const HeroSection = () => {
                 className="group border-2 border-blue-500/70 text-blue-400 hover:bg-blue-500/10 hover:border-blue-500 hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-500 font-semibold px-8 py-4 rounded-2xl backdrop-blur-sm btn-modern"
                 asChild
               >
-                <a href={resumeAsset.url} download="Shreyas_Gowda_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                <a href={resumeFile} download="Shreyas_Resume.png" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   Resume
                   <Sparkles className="ml-2 h-4 w-4 opacity-60 group-hover:opacity-100 group-hover:rotate-12 transition-all duration-300" />
@@ -343,7 +343,7 @@ const HeroSection = () => {
                 className="group border-2 border-purple-500/70 text-purple-400 hover:bg-purple-500/10 hover:border-purple-500 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-500 font-semibold px-8 py-4 rounded-2xl backdrop-blur-sm btn-modern"
                 asChild
               >
-                <a href={coverLetterAsset.url} download="Shreyas_Gowda_CoverLetter.pdf" target="_blank" rel="noopener noreferrer">
+                <a href={coverLetterFile} download="Shreyas_Cover_Letter.png" target="_blank" rel="noopener noreferrer">
                   <Download className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   Cover Letter
                   <Sparkles className="ml-2 h-4 w-4 opacity-60 group-hover:opacity-100 group-hover:rotate-12 transition-all duration-300" />
