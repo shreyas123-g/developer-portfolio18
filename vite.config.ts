@@ -10,7 +10,11 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger(), mcpPlugin()].filter(Boolean),
+  plugins: [
+    react(),
+    mode === "development" && componentTagger(),
+    mode === "development" && mcpPlugin(),
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
