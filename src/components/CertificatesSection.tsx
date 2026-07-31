@@ -2,9 +2,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Award, ExternalLink, FileText } from 'lucide-react';
-import hackerrankSE from '@/assets/hackerrank-software-eng.pdf.asset.json';
-import hackerrankSQL from '@/assets/hackerrank-sql.pdf.asset.json';
-import studyComrade from '@/assets/study-comrade.pdf.asset.json';
+import hackerrankSE from '@/assets/hackerrank-software-engineer.png';
+import hackerrankSQL from '@/assets/hackerrank-sql.png';
+import studyComrade from '@/assets/study-comrade-certificate.png';
 
 const certificates = [
   {
@@ -12,21 +12,21 @@ const certificates = [
     org: 'HackerRank',
     description: 'Verified proficiency in core software engineering fundamentals including problem solving, REST APIs and software design principles.',
     tags: ['Problem Solving', 'REST APIs', 'Software Design'],
-    pdf: hackerrankSE.url,
+    pdf: hackerrankSE,
   },
   {
     title: 'SQL Certificate',
     org: 'HackerRank',
     description: 'Verified skills in SQL — writing complex queries, joins, aggregations and working with relational databases.',
     tags: ['SQL', 'Databases', 'Queries'],
-    pdf: hackerrankSQL.url,
+    pdf: hackerrankSQL,
   },
   {
     title: 'Study Comrade Certificate',
     org: 'Study Comrade',
     description: 'Certificate of achievement from Study Comrade recognizing successful completion of the program.',
     tags: ['Learning', 'Achievement'],
-    pdf: studyComrade.url,
+    pdf: studyComrade,
   },
 ];
 

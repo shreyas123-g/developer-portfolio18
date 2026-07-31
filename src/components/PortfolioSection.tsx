@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Github } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 import secureWallet from '@/assets/secure-wallet.jpg';
 import carPricePrediction from '@/assets/car-price-prediction.jpg';
 import jobTracker from '@/assets/job-tracker.jpg';
@@ -19,8 +19,8 @@ const PortfolioSection = () => {
       description: "A modern and appetizing pizza restaurant website designed in Figma, featuring a bold dark hero section, interactive menu cards, smooth ordering flow, and a clean visual hierarchy. Crafted with strong UI/UX principles including consistent design system, accessible typography, and engaging micro-interactions for a delightful customer experience.",
       image: pizzaWebsiteFigma,
       technologies: ["Figma", "UI/UX Design", "Prototyping", "Design System", "Wireframing"],
-      liveUrl: "https://www.figma.com/proto/HtiEaxzqk9FSuUIX85gxNG/Untitled?node-id=1-2&p=f&t=GZzHBVZKXIvYKlHd-0&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=20%3A110",
-      githubUrl: "https://www.figma.com/design/HtiEaxzqk9FSuUIX85gxNG/Untitled?node-id=0-1&p=f&t=Ewu3IxsG5RuKcZIr-0",
+      liveUrl: "https://www.figma.com/design/XsBcPw2nslEBfyaLQdiuvh/Untitled?t=HVMgyVy3alY2a0L8-0",
+      githubUrl: "https://www.figma.com/design/XsBcPw2nslEBfyaLQdiuvh/Untitled?t=HVMgyVy3alY2a0L8-0",
       featured: true,
     },
     {
@@ -47,7 +47,7 @@ const PortfolioSection = () => {
       image: cinemateBooking,
       technologies: ["Java", "AI/ML", "Data Analytics", "UI/UX Design"],
       liveUrl: "https://cinemate-booking01.vercel.app/",
-      githubUrl: "https://cinemate-booking01.vercel.app/",
+      githubUrl: "https://github.com/shreyas123-g/cinemate-booking01",
       featured: true,
     },
     {
@@ -187,12 +187,33 @@ const PortfolioSection = () => {
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech, techIndex) => (
                       <Badge key={techIndex} variant="secondary" className="text-xs">
                         {tech}
                       </Badge>
                     ))}
+                  </div>
+
+                  <div className="flex space-x-3">
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="border-primary/40 hover:bg-primary/10"
+                      onClick={() => window.open(project.liveUrl, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4 mr-1" />
+                      Live Demo
+                    </Button>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      className="text-muted-foreground hover:text-foreground"
+                      onClick={() => window.open(project.githubUrl, '_blank')}
+                    >
+                      <Github className="h-4 w-4 mr-1" />
+                      GitHub
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -230,10 +251,10 @@ const PortfolioSection = () => {
                         size="sm" 
                         variant="ghost" 
                         className="p-0 h-auto text-muted-foreground hover:text-foreground"
-                        onClick={() => window.open("https://www.figma.com/proto/t2gHjya4Nli7qePuBnBRpc/SHREYAS-PROJECT-1-UI-UX?page-id=26%3A226&node-id=30-546&starting-point-node-id=30%3A546&t=TT69s7rzq7difduk-1", '_blank')}
+                        onClick={() => window.open(project.githubUrl, '_blank')}
                       >
                         <Github className="h-4 w-4 mr-1" />
-                        Code
+                        GitHub
                       </Button>
                     </div>
                   </CardContent>

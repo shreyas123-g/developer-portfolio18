@@ -6,6 +6,9 @@ import shreyasProfile from '@/assets/shreyas-hero-circle.jpg';
 import resumeFile from '@/assets/shreyas-resume.png';
 import coverLetterFile from '@/assets/shreyas-cover-letter.png';
 
+const typewriterText = "Creating digital magic, one pixel at a time ✨";
+const rotatingTexts = ["Innovative", "Creative", "Modern", "Responsive"];
+
 const HeroSection = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
@@ -15,8 +18,6 @@ const HeroSection = () => {
   const [floatingElements, setFloatingElements] = useState<Array<{id: number, x: number, y: number, rotation: number, scale: number}>>([]);
   const [scrollY, setScrollY] = useState(0);
 
-  const typewriterText = "Creating digital magic, one pixel at a time ✨";
-  const rotatingTexts = ["Innovative", "Creative", "Modern", "Responsive"];
   const [currentRotatingIndex, setCurrentRotatingIndex] = useState(0);
 
   useEffect(() => {
